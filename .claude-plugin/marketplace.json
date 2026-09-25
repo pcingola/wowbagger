@@ -1,0 +1,10 @@
+{
+  "name": "wowbagger",
+  "owner": {
+    "name": "Pablo Cingolani"
+  },
+  "metadata": {
+    "description": "A marketplace of Claude skills."
+  },
+  "plugins": []
+}
