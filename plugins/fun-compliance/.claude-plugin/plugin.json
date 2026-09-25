@@ -1,0 +1,8 @@
+{
+  "name": "fun-compliance",
+  "version": "0.1.0",
+  "description": "Blocks any project with a straight-faced compliance memo built from real, verifiable regulations.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}
