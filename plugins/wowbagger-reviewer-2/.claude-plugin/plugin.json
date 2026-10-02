@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-reviewer-2",
+  "version": "0.1.0",
+  "description": "Reviews any manuscript, abstract, figure, repository or sentence as a full journal decision letter: a form-letter editor, a two-line Reviewer 1, Reviewer 3 reviewing a different paper, and Reviewer 2 committing every documented failure of peer review. Every method and term named is real and correctly defined.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

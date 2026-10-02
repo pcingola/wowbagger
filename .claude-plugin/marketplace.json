@@ -31,6 +31,7 @@
         "./plugins/wowbagger-philosopher/skills/wowbagger-philosopher",
         "./plugins/wowbagger-product-manager/skills/wowbagger-product-manager",
         "./plugins/wowbagger-recruiter/skills/wowbagger-recruiter",
+        "./plugins/wowbagger-reviewer-2/skills/wowbagger-reviewer-2",
         "./plugins/wowbagger-scientist/skills/wowbagger-scientist",
         "./plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer",
         "./plugins/wowbagger-wellness-influencer/skills/wowbagger-wellness-influencer"
@@ -125,6 +126,11 @@
       "name": "wowbagger-recruiter",
       "source": "./plugins/wowbagger-recruiter",
       "description": "Answers any CV with a recruiter message pitching a role you have never done, at a client that cannot be named, for a salary that is not a number."
+    },
+    {
+      "name": "wowbagger-reviewer-2",
+      "source": "./plugins/wowbagger-reviewer-2",
+      "description": "Reviews any manuscript, abstract, figure, repository or sentence as a full journal decision letter (editor form letter, Reviewers 1–3, response to reviewers, round 2, final decision). Reviewer 2 shows the documented failure modes of peer review; every method and term named is real and correctly defined."
     },
     {
       "name": "wowbagger-scientist",
