@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-linkedin",
+  "version": "0.1.0",
+  "description": "Rewrites any mundane event as an absurdly over-the-top LinkedIn humblebrag post.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

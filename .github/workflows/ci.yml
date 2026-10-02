@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifests parse and every listed plugin exists
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          m = json.load(open(".claude-plugin/marketplace.json"))
+          for p in m["plugins"]:
+              d = pathlib.Path(p["source"])
+              meta = json.load(open(d / ".claude-plugin/plugin.json"))
+              assert meta["name"] == p["name"], (meta["name"], p["name"])
+              skill = d / "skills" / p["name"] / "SKILL.md"
+              assert skill.read_text().startswith("---\nname: " + p["name"] + "\n"), skill
+          print(len(m["plugins"]), "plugins OK")
+          PY
+      - name: docs/ matches src/html/
+        run: make site && git diff --exit-code -- docs

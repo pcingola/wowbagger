@@ -2,3 +2,6 @@
 *.log
 .vscode/
 .idea/
+
+# Working notes, not part of the deliverable
+tmp/

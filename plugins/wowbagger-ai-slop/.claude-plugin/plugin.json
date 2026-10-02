@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-ai-slop",
+  "version": "0.1.0",
+  "description": "Rewrites any text into maximally insufferable AI slop.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

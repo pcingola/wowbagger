@@ -8,18 +8,18 @@
   },
   "plugins": [
     {
-      "name": "fun-ai-slop",
-      "source": "./plugins/fun-ai-slop",
+      "name": "wowbagger-ai-slop",
+      "source": "./plugins/wowbagger-ai-slop",
       "description": "Rewrites any text into maximally insufferable AI slop."
     },
     {
-      "name": "fun-compliance",
-      "source": "./plugins/fun-compliance",
+      "name": "wowbagger-compliance",
+      "source": "./plugins/wowbagger-compliance",
       "description": "Blocks any project with a straight-faced compliance memo built from real, verifiable regulations."
     },
     {
-      "name": "fun-linkedin",
-      "source": "./plugins/fun-linkedin",
+      "name": "wowbagger-linkedin",
+      "source": "./plugins/wowbagger-linkedin",
       "description": "Rewrites any mundane event as an absurdly over-the-top LinkedIn humblebrag post."
     }
   ]

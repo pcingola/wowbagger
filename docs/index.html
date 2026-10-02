@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wowbagger</title>
+<meta name="description" content="Useless skills for insulting the universe, one petty annoyance at a time. A Claude Code plugin marketplace.">
+<meta property="og:title" content="Wowbagger">
+<meta property="og:description" content="Useless skills for insulting the universe, one petty annoyance at a time.">
+<meta property="og:image" content="img/wowbagger.webp">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --dusk:#2A2350; --cream:#FFF6E6; --stamp:#B8322A;
+  --dark-ground:#17142B; --dark-ground-2:#221D3D;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0; --stamp:#E0675C;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0; --stamp:#E0675C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,pre,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h2{font:700 2.1rem/1.1 "Kalam",cursive;margin:0}
+h3{font:700 1.3rem/1.2 "Kalam",cursive;margin:0}
+
+/* nav */
+nav.top{position:absolute;top:0;left:0;right:0;z-index:5}
+nav.top .wrap{display:flex;justify-content:flex-end;align-items:center;gap:28px;height:64px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.98rem;padding:4px 0;border-bottom:2px solid transparent}
+nav.top a:hover,nav.top a.on{border-bottom-color:var(--cream)}
+nav.top .gh{display:flex;border:0}
+nav.top svg{width:26px;height:26px;fill:var(--cream)}
+
+/* hero */
+.hero{position:relative;min-height:600px;color:var(--cream);background:var(--dusk) url(img/hero.webp) 62% 40%/cover no-repeat;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,20,43,.78) 0%,rgba(23,20,43,.45) 38%,rgba(23,20,43,0) 60%)}
+.hero .wrap{position:relative;width:100%;padding-top:72px;padding-bottom:56px}
+.hero .intro{max-width:540px}
+.hero h1{font:400 clamp(3.4rem,9vw,6.4rem)/.95 "Permanent Marker",cursive;margin:0;letter-spacing:.01em;transform:rotate(-2deg);text-shadow:0 3px 0 rgba(0,0,0,.25)}
+.hero .tag{font:400 clamp(1.5rem,3vw,2.05rem)/1.2 "Kalam",cursive;margin:18px 0 0;transform:rotate(-2deg)}
+.hero .lede{font-size:1.1rem;max-width:460px;margin:24px 0 30px;opacity:.95}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;border:1.5px solid var(--cream)}
+.btn.solid{background:var(--cream);color:var(--dark-ground)}
+.btn.ghost{color:var(--cream);background:rgba(23,20,43,.55)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+
+/* sections */
+section{padding:64px 0 8px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.head a{font-weight:600;text-decoration:none;font-size:.95rem}
+.sub{color:var(--muted);margin:6px 0 0;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.grid.feat{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{min-width:0;background:var(--card);border:1px solid var(--rule);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card img{display:block;width:100%;height:auto;aspect-ratio:800/597;object-fit:cover;cursor:zoom-in}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.45}
+.card .name{font-size:.8rem;color:var(--muted)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{display:flex;align-items:center;gap:8px;background:var(--chip);border-radius:6px;padding:7px 8px 7px 11px;font-size:.78rem;margin-top:6px}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.copybtn{border:0;background:transparent;color:var(--accent);font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+
+/* pending cards */
+.card.pending .ph{aspect-ratio:800/597;background:repeating-linear-gradient(-45deg,var(--chip) 0 14px,var(--paper) 14px 28px);display:flex;align-items:center;justify-content:center}
+.stamp{font:400 1.15rem "Permanent Marker",cursive;color:var(--stamp);border:3px solid var(--stamp);border-radius:6px;padding:4px 14px;transform:rotate(-8deg);opacity:.85;text-align:center;line-height:1.15}
+.card.pending h3{color:var(--muted)}
+
+/* filters */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 16px;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.hide{display:none!important}
+
+/* install / about / contribute */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+pre{background:var(--dark-ground);color:#E8E4F5;border-radius:10px;padding:18px 20px;overflow-x:auto;font-size:.88rem;line-height:1.6;margin:14px 0}
+pre .c{color:#8C86A8}
+.prose p{margin:12px 0}
+.prose ol,.prose ul{padding-left:22px}
+.prose li{margin:6px 0}
+.mug{display:block;width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.quote{font:400 1.35rem/1.35 "Kalam",cursive;border-left:4px solid var(--rule);padding:4px 0 4px 18px;margin:20px 0;color:var(--ink)}
+
+footer{margin-top:80px;background:var(--dark-ground);color:#CFC9E4;padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.5rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+footer small{display:block;opacity:.75;margin-top:4px}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;width:auto;height:auto;border-radius:8px}
+
+@media (max-width:820px){
+  .two{grid-template-columns:1fr}
+  .hero{min-height:560px;background-position:72% 40%}
+  .hero::before{background:linear-gradient(180deg,rgba(23,20,43,.82) 0%,rgba(23,20,43,.55) 55%,rgba(23,20,43,.2) 100%)}
+  nav.top .wrap{gap:16px;justify-content:center}
+  nav.top a{font-size:.9rem}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  nav.top .wrap{gap:12px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a href="#" class="on">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contribute">Contribute</a>
+    <a class="gh" href="https://github.com/pcingola/wowbagger" aria-label="GitHub repository"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="intro">
+      <h1>Wowbagger</h1>
+      <p class="tag">Useless skills for insulting the universe, one petty annoyance at a time.</p>
+      <p class="lede">A Claude Code plugin marketplace of beautifully pointless skills that capture the worst of people and modern work. Each one is written with great care and does nothing you need.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://github.com/pcingola/wowbagger"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub →</a>
+        <a class="btn ghost" href="#skills">Browse Skills</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="head">
+      <h2>Featured Useless Skills</h2>
+      <a href="#skills">View all skills →</a>
+    </div>
+    <div class="grid feat" id="featured-grid"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2>All Useless Skills</h2>
+        <p class="sub">Wowbagger insults the universe in alphabetical order. The ones without a picture are on the list and have not been reached yet. He has time.</p>
+      </div>
+      <div class="chips" role="group" aria-label="Filter skills" id="chips"></div>
+    </div>
+    <div class="grid" id="all-grid"></div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap two">
+    <div class="prose">
+      <h2>Installation</h2>
+      <p>Wowbagger is a Claude Code plugin marketplace. Add it once, then install whichever skill you deserve.</p>
+<pre><span class="c"># add the marketplace</span>
+/plugin marketplace add pcingola/wowbagger
+
+<span class="c"># install a skill</span>
+/plugin install wowbagger-linkedin@wowbagger</pre>
+      <p>Each skill triggers on its own phrases ("linkedinify this", "slopify this", "compliance review") or by name, for example <code>/wowbagger-compliance</code>.</p>
+      <p>No skill in this marketplace makes you more productive. That is tested on every release by not testing it.</p>
+    </div>
+    <div><img class="mug zoom" src="img/wowbagger.webp" alt="Wowbagger sitting on a rock at dusk holding a mug that reads Same planet. Different idiots." width="1200" height="1200" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap prose" style="max-width:820px">
+    <h2>About the name</h2>
+    <p>Wowbagger the Infinitely Prolonged is a character in Douglas Adams' <em>Life, the Universe and Everything</em>. He became immortal by accident, in an incident involving an irrational particle accelerator, a liquid lunch and a pair of rubber bands. Eternity bored him, so he set out to insult every being in the universe individually, in alphabetical order.</p>
+    <p class="quote">"You're a jerk. A complete kneebiter."</p>
+    <p>Adams never explained the name. The likeliest reading is "bagger" in the British hillwalking sense: a Munro bagger works through the list of Scottish mountains over 3,000 feet and ticks each one off. Wowbagger works through the population of the universe the same way. "Wow" is an exclamation on the front, ironic for a man bored beyond measure. The name also sounds like "bugger", a mild British insult, which suits his occupation.</p>
+    <p>This marketplace continues his work at a smaller scale, one profession at a time.</p>
+  </div>
+</section>
+
+<section id="contribute">
+  <div class="wrap prose" style="max-width:820px">
+    <h2>Contribute</h2>
+    <p>Contributions are accepted if the skill is useless, specific, and funny when used exactly as written. A skill that turns out to be helpful will be returned for revision.</p>
+    <ol>
+      <li>Create <code>plugins/wowbagger-&lt;name&gt;/.claude-plugin/plugin.json</code> and <code>plugins/wowbagger-&lt;name&gt;/skills/wowbagger-&lt;name&gt;/SKILL.md</code>. Copy an existing plugin for the layout.</li>
+      <li>Add the plugin to <code>.claude-plugin/marketplace.json</code> and to the table in <code>README.md</code>.</li>
+      <li>Test it locally with <code>/plugin marketplace add ./</code> and <code>/plugin install wowbagger-&lt;name&gt;@wowbagger</code>.</li>
+      <li>Open a pull request. Pick a name from the list above if you want to move Wowbagger along.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="motto">Same planet. Different idiots.</div>
+      <small>Wowbagger is a joke. The skills work.</small>
+    </div>
+    <div>
+      <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+      <small>Not affiliated with the estate of Douglas Adams, who would have had a few words to say about it.</small>
+    </div>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+
+<script>
+const REPO = "https://github.com/pcingola/wowbagger/blob/main/plugins/";
+// Written skills: shown with artwork, an install line and a link to the SKILL.md.
+const SKILLS = [
+  {id:"wowbagger-compliance", title:"The Bureaucrat", cat:"Work", img:"compliance",
+   alt:"A bald bureaucrat behind towers of paper slamming a DENIED stamp on Form 17-B",
+   text:"Blocks any project with a petty, obscure regulation. Every law it cites is real and correctly stated.",
+   tags:["process","compliance","red-tape"]},
+  {id:"wowbagger-linkedin", title:"The LinkedIn Visionary", cat:"People", img:"linkedin",
+   alt:"A woman in sunglasses taking a rooftop selfie holding a CEO Mindset mug in front of a glowing in sign",
+   text:"Turns drinking a glass of water into a resilience arc with a numbered lesson list and eleven hashtags.",
+   tags:["social-media","self-promotion","buzzwords"]},
+  {id:"wowbagger-ai-slop", title:"The AI Copywriter", cat:"Tech", img:"ai-slop",
+   alt:"A beaming robot types an endless scroll of text onto the floor while a bored man holds a note reading tl;dr?",
+   text:"Rewrites any text to be four times longer and to say less. Let us delve.",
+   tags:["ai","em-dashes","filler"]},
+];
+// Not written yet. Wowbagger will get to them.
+const PENDING = [
+  {title:"The AI Engineer", cat:"Tech", text:"Adds an LLM to a problem previously solved by str.lower().", tags:["ai","overengineering","hype"]},
+  {title:"The Consultant", cat:"Work", text:"Turns any question into a 74-slide deck about synergies, stakeholders and a strategic roadmap.", tags:["strategy","powerpoint","buzzwords"]},
+  {title:"The Data Scientist", cat:"Science", text:"Spends three weeks proving quantitatively what Susan told everyone on Monday.", tags:["data","models","overkill"]},
+  {title:"The Engineer", cat:"Science", text:"Pours a glass of water? Time to explain Bernoulli. Changes the thermostat? Thermodynamics and entropy.", tags:["overengineering","physics","systems"]},
+  {title:"The Enterprise Architect", cat:"Tech", text:"Turns a Hello World into a distributed system with Kubernetes, Kafka, a service mesh and a diagram nobody can open.", tags:["architecture","complexity","scale"]},
+  {title:"The HR Business Partner", cat:"People", text:"Turns “Bob is being an asshole” into “an opportunity around interpersonal alignment”.", tags:["hr","communication","corporate"]},
+  {title:"The Mathematician", cat:"Science", text:"Asked if the couch will fit through the door. Begins a proof.", tags:["math","rigor","irrelevance"]},
+  {title:"The Meeting Facilitator", cat:"Work", text:"Schedules a meeting to decide if another meeting is necessary.", tags:["meetings","productivity","meta"]},
+  {title:"The Open-Source Maintainer", cat:"Tech", text:"Maintains software used by millions. Receives an issue: “URGENT!!! doesn't work.” Closes laptop.", tags:["opensource","support","sanity"]},
+  {title:"The Philosopher", cat:"Life", text:"You ask where the bathroom is. You get a 30-minute discussion about the nature of existence.", tags:["philosophy","abstraction","detours"]},
+  {title:"The Product Manager", cat:"Work", text:"Before we jump to solutions, let's define the problem, align stakeholders, and iterate on a framework.", tags:["roadmaps","prioritization","alignment"]},
+  {title:"The Recruiter", cat:"People", text:"Your experience is a perfect match for a role you've never done.", tags:["hiring","keywords","optimism"]},
+  {title:"The Scientist", cat:"Science", text:"Cannot accept anecdotal evidence. Asks for sample size, confidence intervals and replication.", tags:["science","statistics","skepticism"]},
+  {title:"The Security Engineer", cat:"Tech", text:"You asked for the Wi-Fi password. You no longer have permission to know that Wi-Fi exists.", tags:["security","policies","zero-trust"]},
+];
+const CATS = ["All","Work","Tech","Science","People","Life"];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tags = t => `<div class="tags">${t.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`;
+
+function skillCard(s){
+  const cmd = `/plugin install ${s.id}@wowbagger`;
+  return `<article class="card" data-cat="${s.cat}">
+    <img class="zoom" src="img/${s.img}.webp" alt="${esc(s.alt)}" width="800" height="597" loading="lazy">
+    <div class="body">
+      <h3>${esc(s.title)}</h3>
+      <a class="name mono" href="${REPO}${s.id}/skills/${s.id}/SKILL.md">${s.id}</a>
+      <p>${esc(s.text)}</p>
+      ${tags(s.tags)}
+      <div class="install"><code>${cmd}</code><button class="copybtn" data-cmd="${cmd}">Copy</button></div>
+    </div></article>`;
+}
+function pendingCard(s){
+  return `<article class="card pending" data-cat="${s.cat}">
+    <div class="ph"><div class="stamp">Not yet<br>insulted</div></div>
+    <div class="body"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p>${tags(s.tags)}</div></article>`;
+}
+
+document.getElementById("featured-grid").innerHTML = SKILLS.map(skillCard).join("");
+const all = [...SKILLS.map(s=>({...s,done:true})), ...PENDING]
+  .sort((a,b)=>a.title.replace(/^The /,"").localeCompare(b.title.replace(/^The /,"")));
+const grid = document.getElementById("all-grid");
+grid.innerHTML = all.map(s => s.done ? skillCard(s) : pendingCard(s)).join("");
+
+const chips = document.getElementById("chips");
+chips.innerHTML = CATS.map((c,i)=>`<button type="button" aria-pressed="${i===0}" data-cat="${c}">${c}</button>`).join("");
+chips.addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  grid.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide", b.dataset.cat!=="All" && c.dataset.cat!==b.dataset.cat));
+});
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){
+    navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{});
+    return;
+  }
+  const z = e.target.closest("img.zoom");
+  if(z){
+    const d = document.getElementById("lightbox");
+    d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt;
+    d.showModal();
+  }
+});
+document.getElementById("lightbox").addEventListener("click", e => e.currentTarget.close());
+</script>
+</body>
+</html>
