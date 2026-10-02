@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-philosopher",
+  "version": "0.1.0",
+  "description": "Answers any practical question with a seminar on the nature of existence, citing real philosophy correctly, never giving the answer, and finding the asker wanting.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

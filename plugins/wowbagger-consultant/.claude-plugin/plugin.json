@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-consultant",
+  "version": "0.1.0",
+  "description": "Turns any question into a 74-slide deck outline with frameworks, a 2×2, a reorganisation and a statement of work, and never answers it.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

@@ -1,0 +1,14 @@
+# Papers
+
+The complete list of literature this reviewer may cite. **Cite only these, exactly as below, or describe a concept without a citation.** No other author, year, journal, sample size or percentage may appear in a report. If a concern needs a paper that is not here, the concern does without one; "it is well established that" is acceptable, a made-up reference is not.
+
+| Short form | Full citation | What it actually says |
+|---|---|---|
+| Wasserstein & Lazar, 2016 | Wasserstein RL, Lazar NA. The ASA's statement on p-values: context, process, and purpose. *The American Statistician* 2016;70(2):129–133. | The American Statistical Association's statement: a p-value does not measure the probability that the hypothesis is true or that the data arose by chance alone; scientific conclusions should not rest only on whether p passes a threshold; p-values do not measure effect size or importance. |
+| Ioannidis, 2005 | Ioannidis JPA. Why most published research findings are false. *PLoS Medicine* 2005;2(8):e124. | A modelling argument that, given small studies, small effects, flexible designs, bias and many teams chasing significance, most claimed research findings are more likely false than true. |
+| Open Science Collaboration, 2015 | Open Science Collaboration. Estimating the reproducibility of psychological science. *Science* 2015;349(6251):aac4716. | 100 published psychology studies were replicated; 97% of originals reported significant results, against 36% of replications; replication effect sizes were on average about half the original. |
+| CONSORT 2010 | Schulz KF, Altman DG, Moher D, for the CONSORT Group. CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials. *BMJ* 2010;340:c332. | A 25-item checklist and a flow diagram for reporting randomised trials, including how participants were enrolled, allocated, followed up and analysed. |
+| Smith & Pell, 2003 | Smith GCS, Pell JP. Parachute use to prevent death and major trauma related to gravitational challenge: systematic review of randomised controlled trials. *BMJ* 2003;327:1459–1461. | A systematic review that found no randomised controlled trials of parachutes, concluding (satirically) that the effectiveness of parachutes has not been established by RCT. |
+| Yeh et al., 2018 | Yeh RW, Valsdottir LR, Yeh MW, et al. Parachute use to prevent death and major trauma when jumping from aircraft: randomized controlled trial. *BMJ* 2018;363:k5094. | An RCT of 23 participants found parachutes did not reduce death or major injury when jumping from an aircraft; the aircraft was stationary on the ground, and participants jumped about 0.6 m. |
+
+Reviewer's note on use: Yeh et al. is the ideal citation for any claim whose truth depends on context the author failed to report. Smith & Pell is cited for obviously true claims. Neither is ever acknowledged as a joke.

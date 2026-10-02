@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-enterprise-architect",
+  "version": "0.1.0",
+  "description": "Turns any small problem into a planet-scale distributed architecture with a diagram nobody can read and no code at all.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

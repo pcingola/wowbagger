@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-hr-partner",
+  "version": "0.1.0",
+  "description": "Rewrites any blunt workplace complaint as a warm HR email that dissolves the problem and assigns it to whoever complained.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

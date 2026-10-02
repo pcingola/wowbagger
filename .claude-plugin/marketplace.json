@@ -8,6 +8,36 @@
   },
   "plugins": [
     {
+      "name": "wowbagger",
+      "source": "./",
+      "strict": false,
+      "description": "Every Wowbagger skill in one plugin.",
+      "skills": [
+        "./plugins/wowbagger-ai-engineer/skills/wowbagger-ai-engineer",
+        "./plugins/wowbagger-ai-slop/skills/wowbagger-ai-slop",
+        "./plugins/wowbagger-compliance/skills/wowbagger-compliance",
+        "./plugins/wowbagger-consultant/skills/wowbagger-consultant",
+        "./plugins/wowbagger-data-scientist/skills/wowbagger-data-scientist",
+        "./plugins/wowbagger-engineer/skills/wowbagger-engineer",
+        "./plugins/wowbagger-enterprise-architect/skills/wowbagger-enterprise-architect",
+        "./plugins/wowbagger-hr-partner/skills/wowbagger-hr-partner",
+        "./plugins/wowbagger-linkedin/skills/wowbagger-linkedin",
+        "./plugins/wowbagger-mathematician/skills/wowbagger-mathematician",
+        "./plugins/wowbagger-meeting-facilitator/skills/wowbagger-meeting-facilitator",
+        "./plugins/wowbagger-open-source-maintainer/skills/wowbagger-open-source-maintainer",
+        "./plugins/wowbagger-philosopher/skills/wowbagger-philosopher",
+        "./plugins/wowbagger-product-manager/skills/wowbagger-product-manager",
+        "./plugins/wowbagger-recruiter/skills/wowbagger-recruiter",
+        "./plugins/wowbagger-scientist/skills/wowbagger-scientist",
+        "./plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer"
+      ]
+    },
+    {
+      "name": "wowbagger-ai-engineer",
+      "source": "./plugins/wowbagger-ai-engineer",
+      "description": "Replaces any one-line solution with an agentic, multi-model, retrieval-augmented LLM pipeline and a hiring plan."
+    },
+    {
       "name": "wowbagger-ai-slop",
       "source": "./plugins/wowbagger-ai-slop",
       "description": "Rewrites any text into maximally insufferable AI slop."
@@ -18,9 +48,74 @@
       "description": "Blocks any project with a straight-faced compliance memo built from real, verifiable regulations."
     },
     {
+      "name": "wowbagger-consultant",
+      "source": "./plugins/wowbagger-consultant",
+      "description": "Turns any question into a 74-slide deck outline with frameworks, a 2×2, a reorganisation and a statement of work, and never answers it."
+    },
+    {
+      "name": "wowbagger-data-scientist",
+      "source": "./plugins/wowbagger-data-scientist",
+      "description": "Spends three weeks and four models proving what a colleague said on Monday, with less certainty and more contempt."
+    },
+    {
+      "name": "wowbagger-engineer",
+      "source": "./plugins/wowbagger-engineer",
+      "description": "Answers any everyday action with a correct first-principles derivation, an estimate, a terminology correction, a redesign, and a low opinion of you."
+    },
+    {
+      "name": "wowbagger-enterprise-architect",
+      "source": "./plugins/wowbagger-enterprise-architect",
+      "description": "Turns any small problem into a planet-scale distributed architecture with a diagram nobody can read and no code at all."
+    },
+    {
+      "name": "wowbagger-hr-partner",
+      "source": "./plugins/wowbagger-hr-partner",
+      "description": "Rewrites any blunt workplace complaint as a warm HR email that dissolves the problem and assigns it to whoever complained."
+    },
+    {
       "name": "wowbagger-linkedin",
       "source": "./plugins/wowbagger-linkedin",
       "description": "Rewrites any mundane event as an absurdly over-the-top LinkedIn humblebrag post."
+    },
+    {
+      "name": "wowbagger-mathematician",
+      "source": "./plugins/wowbagger-mathematician",
+      "description": "Answers any practical question with a correct, rigorous, generalised proof that does not answer it, and contempt for the person who asked."
+    },
+    {
+      "name": "wowbagger-meeting-facilitator",
+      "source": "./plugins/wowbagger-meeting-facilitator",
+      "description": "Turns any decision into a series of meetings, pre-syncs and parking lots in which nothing is decided, because humans must not be allowed to decide."
+    },
+    {
+      "name": "wowbagger-open-source-maintainer",
+      "source": "./plugins/wowbagger-open-source-maintainer",
+      "description": "Turns any request into a GitHub issue thread where the entitled user, the burnt-out maintainer and the stale bot jointly ensure nothing is ever fixed."
+    },
+    {
+      "name": "wowbagger-philosopher",
+      "source": "./plugins/wowbagger-philosopher",
+      "description": "Answers any practical question with a seminar on the nature of existence, citing real philosophy correctly, never giving the answer, and finding the asker wanting."
+    },
+    {
+      "name": "wowbagger-product-manager",
+      "source": "./plugins/wowbagger-product-manager",
+      "description": "Turns any small request into a product brief with personas, RICE scores and a roadmap, so that nothing is ever built."
+    },
+    {
+      "name": "wowbagger-recruiter",
+      "source": "./plugins/wowbagger-recruiter",
+      "description": "Answers any CV with a recruiter message pitching a role you have never done, at a client that cannot be named, for a salary that is not a number."
+    },
+    {
+      "name": "wowbagger-scientist",
+      "source": "./plugins/wowbagger-scientist",
+      "description": "Answers any everyday claim with a peer review that rejects it for insufficient sample size, missing confidence intervals and lack of replication. Every statistical objection is correct."
+    },
+    {
+      "name": "wowbagger-security-engineer",
+      "source": "./plugins/wowbagger-security-engineer",
+      "description": "Answers any request for access with a security incident report that denies it, revokes something you already had and assigns mandatory training. Every control cited is real."
     }
   ]
 }

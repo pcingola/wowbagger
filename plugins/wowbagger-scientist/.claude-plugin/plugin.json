@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-scientist",
+  "version": "0.1.0",
+  "description": "Answers any everyday claim with a peer review that rejects it for insufficient sample size, missing confidence intervals and lack of replication. Every statistical objection is correct.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-recruiter",
+  "version": "0.1.0",
+  "description": "Answers any CV with a recruiter message pitching a role you have never done, at a client that cannot be named, for a salary that is not a number.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

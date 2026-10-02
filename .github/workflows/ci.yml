@@ -19,6 +19,14 @@ jobs:
           import json, pathlib
           m = json.load(open(".claude-plugin/marketplace.json"))
           for p in m["plugins"]:
+              if p.get("strict") is False:
+                  # Bundle entry: every listed skill exists, and every plugin skill is listed.
+                  listed = {pathlib.Path(s).as_posix() for s in p["skills"]}
+                  for s in listed:
+                      assert (pathlib.Path(p["source"]) / s / "SKILL.md").is_file(), s
+                  have = {f"plugins/{d.name}/skills/{d.name}" for d in pathlib.Path("plugins").iterdir() if d.is_dir()}
+                  assert listed == have, sorted(listed ^ have)
+                  continue
               d = pathlib.Path(p["source"])
               meta = json.load(open(d / ".claude-plugin/plugin.json"))
               assert meta["name"] == p["name"], (meta["name"], p["name"])

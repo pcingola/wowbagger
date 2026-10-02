@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-security-engineer",
+  "version": "0.1.0",
+  "description": "Answers any request for access with a security incident report that denies it, revokes something you already had and assigns mandatory training. Every control cited is real.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

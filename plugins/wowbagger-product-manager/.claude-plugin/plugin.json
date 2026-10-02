@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-product-manager",
+  "version": "0.1.0",
+  "description": "Turns any small request into a product brief with personas, RICE scores and a roadmap, so that nothing is ever built.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

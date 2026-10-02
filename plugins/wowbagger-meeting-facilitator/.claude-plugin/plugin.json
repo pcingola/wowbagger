@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-meeting-facilitator",
+  "version": "0.1.0",
+  "description": "Turns any decision into a series of meetings, pre-syncs and parking lots in which nothing is decided, because humans must not be allowed to decide.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

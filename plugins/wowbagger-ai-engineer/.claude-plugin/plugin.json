@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-ai-engineer",
+  "version": "0.1.0",
+  "description": "Replaces any one-line solution with an agentic, multi-model, retrieval-augmented LLM pipeline and a hiring plan.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

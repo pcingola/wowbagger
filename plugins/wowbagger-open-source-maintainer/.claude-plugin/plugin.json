@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-open-source-maintainer",
+  "version": "0.1.0",
+  "description": "Turns any request into a GitHub issue thread where the entitled user, the burnt-out maintainer and the stale bot jointly ensure nothing is ever fixed.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}
