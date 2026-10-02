@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-code-reviewer",
+  "version": "0.1.0",
+  "description": "Reviews any code, diff or sentence as a pull request: forty nits on a one-line change, real linter rules that contradict each other, changes requested forever, and an instant LGTM for the manager's 4,000-line PR.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}

@@ -24,11 +24,14 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugins) of u
 |---|---|
 | [wowbagger-ai-engineer](plugins/wowbagger-ai-engineer/skills/wowbagger-ai-engineer/SKILL.md) | Replaces any one-line solution with an agentic, multi-model, retrieval-augmented LLM pipeline and a hiring plan. |
 | [wowbagger-ai-slop](plugins/wowbagger-ai-slop/skills/wowbagger-ai-slop/SKILL.md) | Rewrites any text into maximally insufferable AI slop. |
+| [wowbagger-code-reviewer](plugins/wowbagger-code-reviewer/skills/wowbagger-code-reviewer/SKILL.md) | Reviews any code, diff or sentence as a pull request: dozens of nits on a one-line change citing real linter rules and style guides, changes always requested, and an instant LGTM for the manager's 4,000-line PR. |
 | [wowbagger-compliance](plugins/wowbagger-compliance/skills/wowbagger-compliance/SKILL.md) | Blocks any project with a straight-faced compliance memo built from real, verifiable regulations. |
 | [wowbagger-consultant](plugins/wowbagger-consultant/skills/wowbagger-consultant/SKILL.md) | Turns any question into a 74-slide deck outline with frameworks, a 2×2, a reorganisation and a statement of work, and never answers it. |
 | [wowbagger-data-scientist](plugins/wowbagger-data-scientist/skills/wowbagger-data-scientist/SKILL.md) | Spends three weeks and four models proving what a colleague said on Monday, with less certainty and more contempt. |
 | [wowbagger-engineer](plugins/wowbagger-engineer/skills/wowbagger-engineer/SKILL.md) | Answers any everyday action with a correct first-principles derivation, an estimate, a terminology correction, a redesign, and a low opinion of you. |
 | [wowbagger-enterprise-architect](plugins/wowbagger-enterprise-architect/skills/wowbagger-enterprise-architect/SKILL.md) | Turns any small problem into a planet-scale distributed architecture with a diagram nobody can read and no code at all. |
+| [wowbagger-founder](plugins/wowbagger-founder/skills/wowbagger-founder/SKILL.md) | Turns any chore into a seed pitch: Uber for the chore, a TAM in the trillions, a waitlist of 11 including mum, and an $8M ask at a $60M post-money cap. Every startup term is defined correctly, then abused. |
+| [wowbagger-grant-writer](plugins/wowbagger-grant-writer/skills/wowbagger-grant-writer/SKILL.md) | Turns any small task into NIH R01 application fragments (Specific Aims, three interdependent aims, a five-year Gantt chart, a modular budget, a letter of support) and the summary statement it gets back. NIH mechanics are correct. |
 | [wowbagger-hr-partner](plugins/wowbagger-hr-partner/skills/wowbagger-hr-partner/SKILL.md) | Rewrites any blunt workplace complaint as a warm HR email that dissolves the problem and assigns it to whoever complained. |
 | [wowbagger-linkedin](plugins/wowbagger-linkedin/skills/wowbagger-linkedin/SKILL.md) | Rewrites any mundane event as an absurdly over-the-top LinkedIn humblebrag post. |
 | [wowbagger-mathematician](plugins/wowbagger-mathematician/skills/wowbagger-mathematician/SKILL.md) | Answers any practical question with a correct, rigorous, generalised proof that does not answer it, and contempt for the person who asked. |
@@ -39,6 +42,7 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugins) of u
 | [wowbagger-recruiter](plugins/wowbagger-recruiter/skills/wowbagger-recruiter/SKILL.md) | Answers any CV with a recruiter message pitching a role you have never done, at a client that cannot be named, for a salary that is not a number. |
 | [wowbagger-scientist](plugins/wowbagger-scientist/skills/wowbagger-scientist/SKILL.md) | Answers any everyday claim with a peer review that rejects it for insufficient sample size, missing confidence intervals and lack of replication. Every statistical objection is correct. |
 | [wowbagger-security-engineer](plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer/SKILL.md) | Answers any request for access with a security incident report that denies it, revokes something you already had and assigns mandatory training. Every control cited is real. |
+| [wowbagger-wellness-influencer](plugins/wowbagger-wellness-influencer/skills/wowbagger-wellness-influencer/SKILL.md) | Rewrites any meal, habit or everyday event as a wellness influencer's reel script (misused physiology, unnamed toxins, morning routine, supplement stack, discount code), followed by one plain line stating the real evidence. |
 
 ## Repository layout
 

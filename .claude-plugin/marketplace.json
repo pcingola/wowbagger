@@ -15,11 +15,14 @@
       "skills": [
         "./plugins/wowbagger-ai-engineer/skills/wowbagger-ai-engineer",
         "./plugins/wowbagger-ai-slop/skills/wowbagger-ai-slop",
+        "./plugins/wowbagger-code-reviewer/skills/wowbagger-code-reviewer",
         "./plugins/wowbagger-compliance/skills/wowbagger-compliance",
         "./plugins/wowbagger-consultant/skills/wowbagger-consultant",
         "./plugins/wowbagger-data-scientist/skills/wowbagger-data-scientist",
         "./plugins/wowbagger-engineer/skills/wowbagger-engineer",
         "./plugins/wowbagger-enterprise-architect/skills/wowbagger-enterprise-architect",
+        "./plugins/wowbagger-founder/skills/wowbagger-founder",
+        "./plugins/wowbagger-grant-writer/skills/wowbagger-grant-writer",
         "./plugins/wowbagger-hr-partner/skills/wowbagger-hr-partner",
         "./plugins/wowbagger-linkedin/skills/wowbagger-linkedin",
         "./plugins/wowbagger-mathematician/skills/wowbagger-mathematician",
@@ -29,7 +32,8 @@
         "./plugins/wowbagger-product-manager/skills/wowbagger-product-manager",
         "./plugins/wowbagger-recruiter/skills/wowbagger-recruiter",
         "./plugins/wowbagger-scientist/skills/wowbagger-scientist",
-        "./plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer"
+        "./plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer",
+        "./plugins/wowbagger-wellness-influencer/skills/wowbagger-wellness-influencer"
       ]
     },
     {
@@ -41,6 +45,11 @@
       "name": "wowbagger-ai-slop",
       "source": "./plugins/wowbagger-ai-slop",
       "description": "Rewrites any text into maximally insufferable AI slop."
+    },
+    {
+      "name": "wowbagger-code-reviewer",
+      "source": "./plugins/wowbagger-code-reviewer",
+      "description": "Reviews any code, diff or sentence as a pull request: dozens of nits on a one-line change citing real linter rules and style guides, changes always requested, and an instant LGTM for the manager's 4,000-line PR."
     },
     {
       "name": "wowbagger-compliance",
@@ -66,6 +75,16 @@
       "name": "wowbagger-enterprise-architect",
       "source": "./plugins/wowbagger-enterprise-architect",
       "description": "Turns any small problem into a planet-scale distributed architecture with a diagram nobody can read and no code at all."
+    },
+    {
+      "name": "wowbagger-founder",
+      "source": "./plugins/wowbagger-founder",
+      "description": "Turns any chore into a seed pitch: Uber for the chore, a TAM in the trillions, a waitlist of 11 including mum, and an $8M ask at a $60M post-money cap. Every startup term is defined correctly, then abused."
+    },
+    {
+      "name": "wowbagger-grant-writer",
+      "source": "./plugins/wowbagger-grant-writer",
+      "description": "Turns any small task into NIH R01 application fragments (Specific Aims, three interdependent aims, a five-year Gantt chart, a modular budget, a letter of support) and the summary statement it gets back. NIH mechanics are correct."
     },
     {
       "name": "wowbagger-hr-partner",
@@ -116,6 +135,11 @@
       "name": "wowbagger-security-engineer",
       "source": "./plugins/wowbagger-security-engineer",
       "description": "Answers any request for access with a security incident report that denies it, revokes something you already had and assigns mandatory training. Every control cited is real."
+    },
+    {
+      "name": "wowbagger-wellness-influencer",
+      "source": "./plugins/wowbagger-wellness-influencer",
+      "description": "Rewrites any meal, habit or everyday event as a wellness influencer's reel script (misused physiology, unnamed toxins, morning routine, supplement stack, discount code), followed by one plain line stating the real evidence."
     }
   ]
 }

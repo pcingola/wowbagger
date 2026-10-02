@@ -1,0 +1,8 @@
+{
+  "name": "wowbagger-grant-writer",
+  "version": "0.1.0",
+  "description": "Turns any small task into an NIH R01 application, five-year Gantt chart and modular budget included, and the summary statement it gets back. Every NIH mechanic is correct.",
+  "author": {
+    "name": "Pablo Cingolani"
+  }
+}
