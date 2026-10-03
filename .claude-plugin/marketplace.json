@@ -27,6 +27,7 @@
         "./plugins/wowbagger-linkedin/skills/wowbagger-linkedin",
         "./plugins/wowbagger-mathematician/skills/wowbagger-mathematician",
         "./plugins/wowbagger-meeting-facilitator/skills/wowbagger-meeting-facilitator",
+        "./plugins/wowbagger-nerd/skills/wowbagger-nerd",
         "./plugins/wowbagger-open-source-maintainer/skills/wowbagger-open-source-maintainer",
         "./plugins/wowbagger-philosopher/skills/wowbagger-philosopher",
         "./plugins/wowbagger-product-manager/skills/wowbagger-product-manager",
@@ -106,6 +107,11 @@
       "name": "wowbagger-meeting-facilitator",
       "source": "./plugins/wowbagger-meeting-facilitator",
       "description": "Turns any decision into a series of meetings, pre-syncs and parking lots in which nothing is decided, because humans must not be allowed to decide."
+    },
+    {
+      "name": "wowbagger-nerd",
+      "source": "./plugins/wowbagger-nerd",
+      "description": "Answers any work or everyday problem as a Star Trek and Star Wars obsessive: a canon correction of the user's wording, a quiz, the situation mapped to an episode with exact citations, and one correct, practical answer hidden mid-reply in Japanese or verified Klingon."
     },
     {
       "name": "wowbagger-open-source-maintainer",
