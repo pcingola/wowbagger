@@ -34,8 +34,8 @@ The build fails if an image, a share image or a listed example is missing.
 
 Examples: `plugins/wowbagger-<name>/examples/<slug>.md` holds one real run, a
 front-matter `prompt:` line followed by the output as Markdown. List the slugs
-in the skill's `examples` field in `src/skills.json`; the first one's prompt
-is the teaser line on the card. Tool-call lines are left out.
+in the skill's `examples` field in `src/skills.json`; the skill page shows
+them in that order. Tool-call lines are left out.
 
 Images: originals in `assets/images/` (not published), WebP copies in
 `src/html/img/`:

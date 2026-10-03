@@ -112,7 +112,6 @@ sorted.forEach((s, i) => {
 
 // Main page
 function card(s) {
-  const teaser = promptParts(s.ex[0].prompt).rest;
   return `<a class="card" href="skills/${slug(s)}/" data-cat="${esc(s.cat)}">
       <img src="img/${s.img}.webp" alt="${esc(s.alt)}" width="800" height="597" loading="lazy">
       <div class="body">
@@ -120,7 +119,6 @@ function card(s) {
         <span class="name mono">${s.id}</span>
         <p>${esc(s.text)}</p>
         ${tagsHTML(s.tags)}
-        <div class="try"><span class="p"><span class="cmd">&gt;</span> ${esc(teaser)}</span></div>
       </div>
     </a>`;
 }
