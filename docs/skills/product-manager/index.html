@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Product Manager · Wowbagger</title>
+<meta name="description" content="You asked for a blue button. It scored 10.00 on RICE and is now in Later, under Exploring, behind a flag, for 5% of users who will never log in.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/product-manager/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The Product Manager">
+<meta property="og:description" content="You asked for a blue button. It scored 10.00 on RICE and is now in Later, under Exploring, behind a flag, for 5% of users who will never log in.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/product-manager/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-product-manager.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A smug product manager points a marker at a sticky note reading What problem are we actually trying to solve? while two engineers sleep on the table and a laptop shows a button covered in cobwebs">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/product-manager.webp" alt="A smug product manager points a marker at a sticky note reading What problem are we actually trying to solve? while two engineers sleep on the table and a laptop shows a button covered in cobwebs" width="800" height="597">
+    <div>
+      <div class="cat">Work</div>
+      <h1>The Product Manager</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-product-manager/skills/wowbagger-product-manager/SKILL.md">wowbagger-product-manager</a>
+      <p class="lede">You asked for a blue button. It scored 10.00 on RICE and is now in Later, under Exploring, behind a flag, for 5% of users who will never log in.</p>
+      <div class="tags"><span>roadmaps</span><span>prioritization</span><span>alignment</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-product-manager@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-product-manager@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-product-manager</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-product-manager — example 1 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-product-manager</span> can we get a cake for Sam&#x27;s birthday on Friday?</div>
+    <div class="out"><h1>PRD: Sam Birthday Cake Initiative (Discovery)</h1>
+<p><strong>Status:</strong> Draft v0.3, not for distribution · <strong>Owner:</strong> PM · <strong>Links:</strong> <a href="https://miro.example.com/b/cake-discovery">Miro</a> · <a href="https://notion.example.com/celebrations-hub">Notion</a> · <a href="https://figma.example.com/file/cake-v0">Figma</a></p>
+<h2>Before we jump to solutions</h2>
+<p>The request came in as &quot;cake, Sam, Friday&quot;. That&#39;s a solution, not a problem. Reframed:</p>
+<blockquote>
+<p>How might we help co-located and distributed stakeholders recognise tenure-adjacent personal milestones in a way that scales?</p>
+</blockquote>
+<p><em>Owner: you. Due: Friday.</em></p>
+<h2>5 Whys</h2>
+<ol>
+<li>Why a cake? Because it&#39;s Sam&#39;s birthday.</li>
+<li>Why does that need marking? Because the team wants Sam to feel valued.</li>
+<li>Why isn&#39;t Sam feeling valued already? Because there&#39;s no recognition framework.</li>
+<li>Why is there no framework? Because the company grew faster than its rituals.</li>
+<li>Why did the company grow? Because the company exists.</li>
+<li>Why does the company exist? Because humans wanted things.</li>
+</ol>
+<p><em>Owner: PM to follow up.</em></p>
+<h2>Personas</h2>
+<p><strong>Bartholomew, 47, Regional Facilities Coordinator.</strong> He works from a desk nobody has found. He has no recorded birthday in the HRIS, he has never opened the team channel, and in eleven years he has never asked for anything. He is our ideal user.</p>
+<p><strong>Ines, 31, Hybrid Snack Advocate.</strong> She comes in on Wednesdays, believes every milestone deserves a sheet cake and has opinions about buttercream. She is a vocal minority.</p>
+<p><em>Owner: you, to validate both personas by Friday.</em></p>
+<h2>Jobs to Be Done</h2>
+<ul>
+<li><strong>Bartholomew:</strong> When a birthday happens near me, I want to not be told, so I can keep coordinating facilities.</li>
+<li><strong>Ines:</strong> When it&#39;s someone&#39;s birthday, I want cake, so I can have cake.</li>
+</ul>
+<h2>Prioritisation</h2>
+<p>RICE = Reach × Impact × Confidence ÷ Effort (in person-months).</p>
+<table>
+<thead>
+<tr>
+<th>Initiative</th>
+<th>Reach</th>
+<th>Impact</th>
+<th>Confidence</th>
+<th>Effort</th>
+<th>RICE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Celebrations platform</td>
+<td>4,000</td>
+<td>0.5</td>
+<td>50%</td>
+<td>6</td>
+<td>166.67</td>
+</tr>
+<tr>
+<td>Cake alignment sync</td>
+<td>14</td>
+<td>2</td>
+<td>90%</td>
+<td>0.5</td>
+<td>50.40</td>
+</tr>
+<tr>
+<td>Cake for Sam</td>
+<td>12</td>
+<td>1</td>
+<td>34.7%</td>
+<td>0.25</td>
+<td>16.66</td>
+</tr>
+<tr>
+<td>The requester wanting things</td>
+<td>1</td>
+<td>0.25</td>
+<td>5%</td>
+<td>2</td>
+<td>0.01</td>
+</tr>
+</tbody></table>
+<p><strong>MoSCoW:</strong> Must: the alignment sync. Should: the platform. Could: cake. Won&#39;t (this time): Friday.</p>
+<p><em>Owner: PM. Date: directionally Q3.</em></p>
+<h2>RACI</h2>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Accountable</td>
+<td>Alignment</td>
+</tr>
+<tr>
+<td>Sam</td>
+<td>Consulted (with the surprise preserved)</td>
+</tr>
+<tr>
+<td>Bartholomew, Ines, Finance, Legal (allergens)</td>
+<td>Consulted</td>
+</tr>
+<tr>
+<td>You</td>
+<td>Informed</td>
+</tr>
+</tbody></table>
+<h2>Success metrics</h2>
+<ul>
+<li><strong>North Star:</strong> Felt-Valued Days per Employee per Quarter.</li>
+<li><strong>Counter-metric:</strong> Cake-Induced Afternoon Productivity Variance.</li>
+<li><strong>Guardrail:</strong> Sam does not notice the process.</li>
+</ul>
+<p><em>Owner: you, to set up instrumentation.</em></p>
+<h2>The pivot</h2>
+<p>What if Sam&#39;s cake weren&#39;t a cake? What if it were the first tenant on a <strong>Celebrations Platform</strong>: birthdays, work anniversaries, farewells, and one day, cake. The epic is CELEB-1. Sam is the design partner. Sam doesn&#39;t know.</p>
+<h2>MVP</h2>
+<p>A cake emoji in the team channel, posted by an internal user, behind a feature flag, on Tuesdays only. Sam&#39;s birthday is a Friday, which gives us a clean control.</p>
+<p>One hypothesis to validate: someone buys a cake on Thursday evening for about $30.</p>
+<h2>Experiment</h2>
+<p>Two-arm test of cake versus no cake on birthday-satisfaction rate. Baseline 60%, minimum detectable effect +5 points, α = 0.05 two-sided, power 80%. Required sample: 1,471 birthdays per arm, 2,942 in total. With 14 birthdays a year on the team, that&#39;s 210 years. We&#39;re treating it as a long-term bet.</p>
+<p><em>Owner: PM to follow up.</em></p>
+<h2>Risks and open questions</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Assigned to</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Allergens, gluten, the vegan question</td>
+<td>Allergen pre-read</td>
+</tr>
+<tr>
+<td>Precedent: once Sam has a cake, every birthday wants one</td>
+<td>Precedent working group</td>
+</tr>
+<tr>
+<td>Sam&#39;s age as PII</td>
+<td>Legal sync</td>
+</tr>
+<tr>
+<td>Users</td>
+<td>Quarterly users retro</td>
+</tr>
+</tbody></table>
+<h2>Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Now</th>
+<th>Next</th>
+<th>Later</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Recognition framework discovery</td>
+<td>Celebrations platform v0</td>
+<td>Cake for Sam → Exploring → Revisit post-reorg</td>
+</tr>
+</tbody></table>
+<h2>Next steps</h2>
+<ol>
+<li>Pre-sync for the alignment sync (Monday)</li>
+<li>Alignment sync (Tuesday)</li>
+<li>Pre-read for the allergen review (Wednesday)</li>
+<li>Allergen review (Thursday)</li>
+<li>Async retro on Sam&#39;s birthday (the following Monday)</li>
+</ol>
+<p><em>Owner: you, to send invites. Could you pull together some context in the doc?</em></p>
+<p>Sam will be a year older on Friday either way, and that part ships without us.</p>
+<p>Happy to jam on this. Let&#39;s take it offline.</p>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-product-manager — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-product-manager</span> the light in the meeting room is flickering</div>
+    <div class="out"><h1>PRD: Meeting Room Illumination Initiative (Discovery)</h1>
+<p><strong>Status:</strong> Draft v0.3, not for distribution · <strong>Owner:</strong> PM · <strong>Links:</strong> <a href="https://miro.example.com/b/illum-3b">Miro</a> · <a href="https://notion.example.com/illum">Notion</a> · <a href="https://figma.example.com/f/lumen-0">Figma</a></p>
+<h2>Before we jump to solutions</h2>
+<p>How might we help collaborators keep a consistent sense of presence across the visual layer of shared spaces?</p>
+<p><em>Owner: you · Due: Oct 9</em></p>
+<h2>5 Whys</h2>
+<ol>
+<li>Why is the experience degraded? The tube in Room 3B is failing.</li>
+<li>Why? Nobody has replaced it.</li>
+<li>Why? Room lighting has no owner.</li>
+<li>Why? Facilities tickets route to a team that was dissolved in the reorg.</li>
+<li>Why does Room 3B exist? Because the company exists.</li>
+<li>Why does the company exist? Humans wanted to see each other&#39;s faces.</li>
+</ol>
+<p><em>Owner: PM to follow up · Due: Oct 14</em></p>
+<h2>Personas</h2>
+<p><strong>Osric, 58, Calendar Custodian.</strong> Holds Room 3B every Thursday from 10 to 11 and has never gone in. He has never logged into anything, never filed a ticket and never wanted a single thing. He is the user we design for.</p>
+<p><strong>Lena, 29, Solutions Associate.</strong> Sits facing the light. Has filed four tickets. Now blinks in time with the ceiling. Low-confidence cohort.</p>
+<h2>Jobs to Be Done</h2>
+<ul>
+<li><strong>Osric:</strong> When I hold a room, I want it to stay held, so I can never attend.</li>
+<li><strong>Lena:</strong> When I&#39;m in a meeting, I want to see the slides, so I can leave.</li>
+</ul>
+<p><em>Owner: you · Due: Oct 16</em></p>
+<h2>Prioritisation</h2>
+<table>
+<thead>
+<tr>
+<th>Initiative</th>
+<th>Reach</th>
+<th>Impact</th>
+<th>Confidence</th>
+<th>Effort</th>
+<th>RICE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ambient Illumination Platform</td>
+<td>40</td>
+<td>2</td>
+<td>50%</td>
+<td>3</td>
+<td>13.33</td>
+</tr>
+<tr>
+<td>Quarterly Lighting Alignment Sync</td>
+<td>9</td>
+<td>1</td>
+<td>80%</td>
+<td>1</td>
+<td>7.20</td>
+</tr>
+<tr>
+<td>Replace the tube</td>
+<td>12</td>
+<td>0.25</td>
+<td>50%</td>
+<td>0.5</td>
+<td>3.00</td>
+</tr>
+<tr>
+<td>Humanity&#39;s wellbeing</td>
+<td>8.1B</td>
+<td>0.25</td>
+<td>0.0001%</td>
+<td>1,000</td>
+<td>2.03</td>
+</tr>
+</tbody></table>
+<p><strong>MoSCoW.</strong> Must: the sync. Should: the platform. Could: the tube. Won&#39;t: humanity, this quarter.</p>
+<p>Customers are telling us they want ambience. (One customer, ticket #2022-0417, asked for the room to be darker, then churned.)</p>
+<p>Replacing the tube is a hypothesis to validate.</p>
+<h2>RACI</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>R</th>
+<th>A</th>
+<th>C</th>
+<th>I</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Light strategy</td>
+<td>Facilities (dissolved)</td>
+<td>Alignment</td>
+<td>Design, Legal, Electrician, the light</td>
+<td>You</td>
+</tr>
+</tbody></table>
+<h2>Success metrics</h2>
+<ul>
+<li><strong>North Star:</strong> Perceived Illumination Continuity (PIC).</li>
+<li><strong>Counter-metric:</strong> meetings that end early because nobody can see.</li>
+<li><strong>Guardrail:</strong> nobody touches the ceiling.</li>
+</ul>
+<p><em>Owner: PM to follow up · Due: Q3 2027, directionally</em></p>
+<h2>The pivot</h2>
+<p>What if the light weren&#39;t a light? What if it were a platform? Lighting-as-a-Service: scheduled, themeable, API-first. Epic <strong>AIP-1</strong> is now open.</p>
+<h2>MVP</h2>
+<p>A sticky note on the switch that reads &quot;Known issue&quot;. Internal users only, behind a flag, Tuesdays.</p>
+<h2>Experiment</h2>
+<p>We&#39;ll A/B test steady light against flickering light. The metric is meetings ending on time. Baseline 20%, minimum detectable effect +2 pp, α = 0.05 two-sided, power 80%:</p>
+<p>n = (1.96 + 0.84)² × (0.16 + 0.1716) / 0.02² ≈ <strong>6,507 meetings per arm</strong></p>
+<p>Room 3B hosts 6 meetings a week, so 13,014 meetings will take 41.6 years. It&#39;s a long-term bet.</p>
+<h2>Risks and open questions</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The light fixes itself before discovery finishes</td>
+<td>Pre-mortem sync</td>
+</tr>
+<tr>
+<td>Someone brings a ladder</td>
+<td>Risk review</td>
+</tr>
+<tr>
+<td>Osric goes into the room</td>
+<td>Stakeholder sync</td>
+</tr>
+<tr>
+<td>Users</td>
+<td>Ongoing</td>
+</tr>
+</tbody></table>
+<h2>Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Now</th>
+<th>Next</th>
+<th>Later</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Roadmap-tooling evaluation</td>
+<td>AIP discovery</td>
+<td>Exploring → Revisit post-reorg: the light</td>
+</tr>
+</tbody></table>
+<h2>Next steps</h2>
+<ol>
+<li>Pre-sync for the Lighting Alignment Sync (Oct 20)</li>
+<li>Lighting Alignment Sync (Oct 22)</li>
+<li>Pre-read review for the AIP discovery kickoff (Nov 3)</li>
+<li>AIP discovery kickoff (Nov 5)</li>
+</ol>
+<p>Could you pull together some context in the doc before the pre-sync? Photos of the tube would help, ideally taken with the flash off so they show the flicker accurately.</p>
+<p>Room 3B has a mood now. I&#39;d hate to lose it.</p>
+<p>Happy to jam on this. Let&#39;s take it offline.</p>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../philosopher/"><small>← Previous</small>The Philosopher</a><a class="next" href="../recruiter/"><small>Next →</small>The Recruiter</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>

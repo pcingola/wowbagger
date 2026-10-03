@@ -72,8 +72,10 @@ section{padding:64px 0 8px}
 .sub{color:var(--muted);margin:6px 0 0;max-width:720px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
 .grid.feat{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.card{min-width:0;background:var(--card);border:1px solid var(--rule);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
-.card img{display:block;width:100%;height:auto;aspect-ratio:800/597;object-fit:cover;cursor:zoom-in}
+.card{min-width:0;background:var(--card);border:1px solid var(--rule);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;color:inherit;text-decoration:none;transition:transform .12s,box-shadow .12s,border-color .12s}
+.card:hover,.card:focus-visible{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 2px 4px rgba(20,16,40,.08),0 10px 28px rgba(20,16,40,.14)}
+.card:hover h3,.card:focus-visible h3{color:var(--accent)}
+.card img{display:block;width:100%;height:auto;aspect-ratio:800/597;object-fit:cover}
 .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.45}
 .card .name{font-size:.8rem;color:var(--muted)}
@@ -83,20 +85,12 @@ section{padding:64px 0 8px}
 .getall code{flex:1;min-width:0;overflow-wrap:anywhere}
 .getall .c{color:#F2B84B}
 .getall .copybtn{color:#F2B84B}
-.try{display:flex;align-items:center;gap:10px;width:100%;margin-top:6px;padding:8px 10px 8px 12px;border:0;border-radius:7px;background:var(--dark-ground);font:500 .78rem "IBM Plex Mono",monospace;text-align:left;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s,background .12s}
-.try:hover{background:var(--dark-ground-2);transform:translateY(-1px)}
+.try{display:flex;align-items:center;width:100%;margin-top:6px;padding:8px 10px 8px 12px;border-radius:7px;background:var(--dark-ground);font:500 .78rem "IBM Plex Mono",monospace;box-shadow:var(--shadow)}
 :root[data-theme="dark"] .try{background:#2A2738}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .try{background:#2A2738}}
 .try .p{flex:1;min-width:0;color:#E8E4F5;font-weight:400;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.4}
 .try .p .cmd{color:#F2B84B}
-.try .go{flex:none;color:#F2B84B}
-.try .go::after{content:" ›"}
 .copybtn{border:0;background:transparent;color:var(--accent);font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
-
-/* pending cards */
-.card.pending .ph{aspect-ratio:800/597;background:repeating-linear-gradient(-45deg,var(--chip) 0 14px,var(--paper) 14px 28px);display:flex;align-items:center;justify-content:center}
-.stamp{font:400 1.15rem "Permanent Marker",cursive;color:var(--stamp);border:3px solid var(--stamp);border-radius:6px;padding:4px 14px;transform:rotate(-8deg);opacity:.85;text-align:center;line-height:1.15}
-.card.pending h3{color:var(--muted)}
 
 /* filters */
 .chips{display:flex;gap:8px;flex-wrap:wrap}
@@ -106,6 +100,7 @@ section{padding:64px 0 8px}
 
 /* install / about / contribute */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.two>*{min-width:0}
 pre{background:var(--dark-ground);color:#E8E4F5;border-radius:10px;padding:18px 20px;overflow-x:auto;font-size:.88rem;line-height:1.6;margin:14px 0}
 pre .c{color:#8C86A8}
 .prose p{margin:12px 0}
@@ -124,42 +119,6 @@ footer small{display:block;opacity:.75;margin-top:4px}
 dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
 dialog::backdrop{background:rgba(10,8,20,.85)}
 dialog img{display:block;max-width:100%;max-height:94vh;width:auto;height:auto;border-radius:8px}
-
-/* example dialog: a terminal transcript */
-#example{width:min(96vw,980px);height:min(90vh,1100px);margin:auto}
-#example[open]{display:flex}
-.term{flex:1;min-height:0;display:flex;flex-direction:column;background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
-.term .dots{display:flex;gap:6px;flex:none}
-.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
-.term .dots i:nth-child(2){background:#FEBC2E}
-.term .dots i:nth-child(3){background:#28C840}
-.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.term .bar button{border:0;background:transparent;color:#B9B3D0;font:600 .85rem "IBM Plex Mono",monospace;cursor:pointer;padding:2px 8px;border-radius:4px}
-.term .bar button:hover{background:#2E2A40;color:#fff}
-.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.15rem/1.45 "IBM Plex Mono",monospace;color:#FFFFFF;overflow-wrap:anywhere;position:relative}
-.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
-.term .prompt .cmd{color:#F2B84B;font-weight:600}
-.term .out{flex:1;overflow:auto;padding:16px 22px 26px 36px;font:400 .86rem/1.6 "IBM Plex Mono",monospace;position:relative}
-.term .out::before{content:"●";position:absolute;left:16px;top:16px;color:#E6E2F0;font-size:.7rem;line-height:1.6rem}
-.term .out>:first-child{margin-top:0}
-.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.6 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
-.term .out p,.term .out ol,.term .out ul{margin:0 0 1.15em}
-.term .out ol,.term .out ul{padding-left:2.2em}
-.term .out strong{color:#fff;font-weight:500}
-.term .out em{color:#D7D1EA}
-.term .out table{border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
-.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
-.term .out td:first-child{white-space:nowrap}
-.term .nav{display:flex;gap:4px;align-items:center;font:500 .78rem "IBM Plex Mono",monospace;color:#8C86A8}
-@media (max-width:600px){
-  #example{width:100vw;height:100dvh;max-width:100vw;max-height:100dvh}
-  .term{border-radius:0}
-  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
-  .term .prompt::before{left:12px}
-  .term .out{padding:14px 14px 22px 28px;font-size:.8rem}
-  .term .out::before{left:10px;top:14px}
-}
 
 @media (max-width:820px){
   .two{grid-template-columns:1fr}
@@ -210,7 +169,38 @@ dialog img{display:block;max-width:100%;max-height:94vh;width:auto;height:auto;b
       <h2>Featured Useless Skills</h2>
       <a href="#skills">View all skills →</a>
     </div>
-    <div class="grid feat" id="featured-grid"></div>
+    <div class="grid feat" id="featured-grid">
+<a class="card" href="skills/compliance/" data-cat="Work">
+      <img src="img/compliance.webp" alt="A bald bureaucrat behind towers of paper slamming a DENIED stamp on Form 17-B" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Bureaucrat</h3>
+        <span class="name mono">wowbagger-compliance</span>
+        <p>Blocks any project with a petty, obscure regulation. Every law it cites is real and correctly stated.</p>
+        <div class="tags"><span>process</span><span>compliance</span><span>red-tape</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> My kids want to put a lemonade stand on the sidewalk, we live in Boston.</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/linkedin/" data-cat="People">
+      <img src="img/linkedin.webp" alt="A woman in sunglasses taking a rooftop selfie holding a CEO Mindset mug in front of a glowing in sign" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The LinkedIn Visionary</h3>
+        <span class="name mono">wowbagger-linkedin</span>
+        <p>Turns drinking a glass of water into a resilience arc with a numbered lesson list and eleven hashtags.</p>
+        <div class="tags"><span>social-media</span><span>self-promotion</span><span>buzzwords</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I went to the restroom...and pooped</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/ai-slop/" data-cat="Tech">
+      <img src="img/ai-slop.webp" alt="A beaming robot types an endless scroll of text onto the floor while a bored man holds a note reading tl;dr?" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The AI Copywriter</h3>
+        <span class="name mono">wowbagger-ai-slop</span>
+        <p>Rewrites any text to be four times longer and to say less. Let us delve.</p>
+        <div class="tags"><span>ai</span><span>em-dashes</span><span>filler</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> LGTM</span></div>
+      </div>
+    </a>
+    </div>
   </div>
 </section>
 
@@ -221,9 +211,240 @@ dialog img{display:block;max-width:100%;max-height:94vh;width:auto;height:auto;b
         <h2>All Useless Skills</h2>
         <p class="sub">Wowbagger insults the universe in alphabetical order. He has reached everyone on this page. He has time.</p>
       </div>
-      <div class="chips" role="group" aria-label="Filter skills" id="chips"></div>
+      <div class="chips" role="group" aria-label="Filter skills" id="chips"><button type="button" aria-pressed="true" data-cat="All">All</button><button type="button" aria-pressed="false" data-cat="Work">Work</button><button type="button" aria-pressed="false" data-cat="Tech">Tech</button><button type="button" aria-pressed="false" data-cat="Science">Science</button><button type="button" aria-pressed="false" data-cat="People">People</button><button type="button" aria-pressed="false" data-cat="Life">Life</button></div>
     </div>
-    <div class="grid" id="all-grid"></div>
+    <div class="grid" id="all-grid">
+<a class="card" href="skills/ai-slop/" data-cat="Tech">
+      <img src="img/ai-slop.webp" alt="A beaming robot types an endless scroll of text onto the floor while a bored man holds a note reading tl;dr?" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The AI Copywriter</h3>
+        <span class="name mono">wowbagger-ai-slop</span>
+        <p>Rewrites any text to be four times longer and to say less. Let us delve.</p>
+        <div class="tags"><span>ai</span><span>em-dashes</span><span>filler</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> LGTM</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/ai-engineer/" data-cat="Tech">
+      <img src="img/ai-engineer.webp" alt="A smug engineer in a hoodie leans back with arms crossed in front of a whiteboard where six AI agents point at one tiny box labelled str.lower(), while a tired colleague carries a stack of GPU invoices" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The AI Engineer</h3>
+        <span class="name mono">wowbagger-ai-engineer</span>
+        <p>Replaces s.lower() with four agents, a vector database and $1.2 million a year. 99.4% accurate. The humans were the 0.6%.</p>
+        <div class="tags"><span>ai</span><span>overengineering</span><span>hype</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> is the fridge door closed?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/compliance/" data-cat="Work">
+      <img src="img/compliance.webp" alt="A bald bureaucrat behind towers of paper slamming a DENIED stamp on Form 17-B" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Bureaucrat</h3>
+        <span class="name mono">wowbagger-compliance</span>
+        <p>Blocks any project with a petty, obscure regulation. Every law it cites is real and correctly stated.</p>
+        <div class="tags"><span>process</span><span>compliance</span><span>red-tape</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> My kids want to put a lemonade stand on the sidewalk, we live in Boston.</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/code-reviewer/" data-cat="Tech">
+      <img src="img/code-reviewer.webp" alt="A smug bearded engineer in headphones covers a one-line code change with red sticky notes reading nit, holding a green LGTM stamp, while a grinning manager waits behind him with a tall stack of paper labelled misc fixes" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Code Reviewer</h3>
+        <span class="name mono">wowbagger-code-reviewer</span>
+        <p>Forty-one comments on your one-line fix, every rule real, changes requested. Your manager&#x27;s 4,000-line PR titled misc fixes was approved in nine seconds. LGTM 🚀</p>
+        <div class="tags"><span>code-review</span><span>linters</span><span>pedantry</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I fixed the typo</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/consultant/" data-cat="Work">
+      <img src="img/consultant.webp" alt="A smug young consultant points at a 2x2 where every dot is in the top right while executives sleep and an invoice unrolls onto the floor" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Consultant</h3>
+        <span class="name mono">wowbagger-consultant</span>
+        <p>You already knew the answer. For $1.1m it is on slide A-37, deprioritised, and three of your colleagues have been right-sized.</p>
+        <div class="tags"><span>strategy</span><span>powerpoint</span><span>buzzwords</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> consultify this: who ate my yoghurt from the office fridge</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/data-scientist/" data-cat="Science">
+      <img src="img/data-scientist.webp" alt="A smug data scientist in a hoodie stands by a chart reading p = 0.051 in an empty meeting room while a colleague holds a sticky note reading Told you Monday" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Data Scientist</h3>
+        <span class="name mono">wowbagger-data-scientist</span>
+        <p>Three weeks, four models and ten caveats later: directionally consistent with what Susan said on Monday. Caveat 10 is you.</p>
+        <div class="tags"><span>data</span><span>models</span><span>overkill</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> do people reply to emails slower on Friday afternoons?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/engineer/" data-cat="Science">
+      <img src="img/engineer.webp" alt="A bearded engineer at a chalkboard covered in Bernoulli&#x27;s equation glares down at a friend holding a glass of water" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Engineer</h3>
+        <span class="name mono">wowbagger-engineer</span>
+        <p>You poured a glass of water. Here is Bernoulli, three of its four assumptions violated, a better jug, and a free-body diagram of you.</p>
+        <div class="tags"><span>overengineering</span><span>physics</span><span>systems</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I opened the fridge and stood there looking for a snack</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/enterprise-architect/" data-cat="Tech">
+      <img src="img/enterprise-architect.webp" alt="A smug architect in a hoodie points at a whiteboard of tangled services while a slumped developer&#x27;s laptop showing Hello World gathers cobwebs" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Enterprise Architect</h3>
+        <span class="name mono">wowbagger-enterprise-architect</span>
+        <p>You asked for Hello World. You get 17 services in three regions, $41,200 a month, and Hello World in Phase 4. You were never going to see the code.</p>
+        <div class="tags"><span>architecture</span><span>complexity</span><span>scale</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> architect this: a shared shopping list for me and my partner</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/founder/" data-cat="Work">
+      <img src="img/founder.webp" alt="An ecstatic founder in a hoodie and headset points a clicker at a hockey-stick slide reading TAM: $10 TRILLION while holding up a wilted houseplant, as his mum claps alone in the front row" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Founder</h3>
+        <span class="name mono">wowbagger-founder</span>
+        <p>You couldn&#x27;t open a jar. That is a $118 trillion market, the waitlist is eleven including mum, and the round is oversubscribed. We&#x27;re default alive.</p>
+        <div class="tags"><span>startups</span><span>fundraising</span><span>hype</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I can&#x27;t get the lid off this jar</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/grant-writer/" data-cat="Science">
+      <img src="img/grant-writer.webp" alt="An exhausted academic types a grant beside a towering stack of paper and an untouched watering can, while the plant on the windowsill wilts next to a Gantt chart that schedules WATER PLANT for Year 5" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Grant Writer</h3>
+        <span class="name mono">wowbagger-grant-writer</span>
+        <p>You need to water the plants. Five years, three interdependent aims, a postdoc and a 0.5 FTE biostatistician. Not discussed.</p>
+        <div class="tags"><span>science</span><span>grants</span><span>academia</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I need to water the plants</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/hr-partner/" data-cat="People">
+      <img src="img/hr-partner.webp" alt="A beaming HR partner hands a weeping employee a box of tissues and a stack of action items while, behind the glass, a man shouts and nobody reacts" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The HR Business Partner</h3>
+        <span class="name mono">wowbagger-hr-partner</span>
+        <p>You reported that Bob is an asshole. Bob is now a high-energy collaborator, and you have five action items, a reflection journal and a quick 15 on Friday. 💛</p>
+        <div class="tags"><span>hr</span><span>communication</span><span>corporate</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I haven&#x27;t had a raise in four years</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/linkedin/" data-cat="People">
+      <img src="img/linkedin.webp" alt="A woman in sunglasses taking a rooftop selfie holding a CEO Mindset mug in front of a glowing in sign" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The LinkedIn Visionary</h3>
+        <span class="name mono">wowbagger-linkedin</span>
+        <p>Turns drinking a glass of water into a resilience arc with a numbered lesson list and eleven hashtags.</p>
+        <div class="tags"><span>social-media</span><span>self-promotion</span><span>buzzwords</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I went to the restroom...and pooped</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/mathematician/" data-cat="Science">
+      <img src="img/mathematician.webp" alt="A wild-haired mathematician with his back to a sofa wedged in a doorway writes Assume the couch is a compact subset of R³ on a blackboard while a sweating man is trapped behind the sofa" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Mathematician</h3>
+        <span class="name mono">wowbagger-mathematician</span>
+        <p>You asked if the couch fits through the door. It proves a theorem about every couch in n dimensions. Yours is left as an exercise.</p>
+        <div class="tags"><span>math</span><span>rigor</span><span>irrelevance</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> Will my couch fit through the door?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/meeting-facilitator/" data-cat="Work">
+      <img src="img/meeting-facilitator.webp" alt="A serenely smiling facilitator points at a whiteboard agenda reading Align, Discuss, Revisit, Sync, Next steps, beside a sticky note that says Do we need a meeting?, while a dozen attendees slump, sleep and cry" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Meeting Facilitator</h3>
+        <span class="name mono">wowbagger-meeting-facilitator</span>
+        <p>Has run 4,000 meetings without a single decision. Considers this the safest record in the building. Your decision is in the parking lot.</p>
+        <div class="tags"><span>meetings</span><span>productivity</span><span>meta</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> the coffee machine is broken, should we call someone to fix it?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/nerd/" data-cat="People">
+      <img src="img/nerd.webp" alt="A woman in a gold Starfleet-style uniform holds out a folded gold tunic to a startled executive wearing a red one over his suit, in a boardroom whose whiteboard reads Q3 BUDGET = KOBAYASHI MARU above boxes labelled CUT, CUT MORE and LOSE, all pointing to NO WIN, with a bat&#x27;leth leaning on her chair" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Nerd</h3>
+        <span class="name mono">wowbagger-nerd</span>
+        <p>You ask her a technical question. She corrects your wording with a stardate, then gives you the right answer, in Klingon (which she does not translate).</p>
+        <div class="tags"><span>star-trek</span><span>star-wars</span><span>klingon</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> How do I unfreeze a stuck Jupyter kernel?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/open-source-maintainer/" data-cat="Tech">
+      <img src="img/open-source-maintainer.webp" alt="A hooded, bearded maintainer smirking with half-closed eyes at a laptop showing URGENT!!! doesnt work, beside a 9M downloads/week chart, a PRs welcome sticky note and a tip jar with one coin" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Open-Source Maintainer</h3>
+        <span class="name mono">wowbagger-open-source-maintainer</span>
+        <p>Maintains software used by nine million people, none of whom have read the docs. Asks for a minimal reproducible example of your typo, then lets a bot close you as stale.</p>
+        <div class="tags"><span>opensource</span><span>wontfix</span><span>prs-welcome</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> the cancel button doesnt cancel</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/philosopher/" data-cat="Life">
+      <img src="img/philosopher.webp" alt="A smug bearded philosopher in an armchair raises one finger and asks But what do you mean by is? while a desperate young person with crossed legs points at a door marked WC" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Philosopher</h3>
+        <span class="name mono">wowbagger-philosopher</span>
+        <p>You ask where the bathroom is. You get Plutarch, Descartes, Kant, a footnote longer than your bladder, and the conclusion that the real problem is you.</p>
+        <div class="tags"><span>philosophy</span><span>abstraction</span><span>detours</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> philosophize: should I reply-all to this email?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/product-manager/" data-cat="Work">
+      <img src="img/product-manager.webp" alt="A smug product manager points a marker at a sticky note reading What problem are we actually trying to solve? while two engineers sleep on the table and a laptop shows a button covered in cobwebs" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Product Manager</h3>
+        <span class="name mono">wowbagger-product-manager</span>
+        <p>You asked for a blue button. It scored 10.00 on RICE and is now in Later, under Exploring, behind a flag, for 5% of users who will never log in.</p>
+        <div class="tags"><span>roadmaps</span><span>prioritization</span><span>alignment</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> can we get a cake for Sam&#x27;s birthday on Friday?</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/recruiter/" data-cat="People">
+      <img src="img/recruiter.webp" alt="A grinning recruiter with a price-tag gun behind his back leans out of a laptop telling a bewildered pastry chef with a rolling pin that he is perfect for a senior Java position" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Recruiter</h3>
+        <span class="name mono">wowbagger-recruiter</span>
+        <p>You are a perfect match for a role you have never done, at a client it cannot name, for a salary that is not a number. You are also a strong 6.</p>
+        <div class="tags"><span>hiring</span><span>keywords</span><span>optimism</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I&#x27;m a beekeeper</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/reviewer-2/" data-cat="Science">
+      <img src="img/reviewer-2.webp" alt="A smug academic in a tweed blazer with a REVIEWER 2 conference badge squints at a manuscript on his phone in a coffee queue and writes ADD MOUSE MODEL on a sticky note, while an alarmed white mouse sits on his shoulder in front of a poster titled A Purely Computational Study" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>Reviewer 2</h3>
+        <span class="name mono">wowbagger-reviewer-2</span>
+        <p>Major revision. Cite five redacted papers, add a mouse model to your computational study, and remove the sentence on line 88, which is not in your manuscript. The English has improved.</p>
+        <div class="tags"><span>peer-review</span><span>academia</span><span>bioinformatics</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> My cat ignores me.</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/scientist/" data-cat="Science">
+      <img src="img/scientist.webp" alt="A disgusted wild-haired scientist holds a note reading Great coffee here with tongs, a REJECTED stamp in his other hand, in front of a chalkboard reading n = 1, reject" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Scientist</h3>
+        <span class="name mono">wowbagger-scientist</span>
+        <p>You liked the coffee. n = 1, unblinded, no confidence interval. Rejected. Every objection is correct, and so is the one about you.</p>
+        <div class="tags"><span>science</span><span>statistics</span><span>skepticism</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> the toast always lands butter side down</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/security-engineer/" data-cat="Tech">
+      <img src="img/security-engineer.webp" alt="A bored hooded security engineer in mirrored sunglasses holds up a tablet reading Wi-Fi: denied while a blast door closes on an office worker with a coffee mug" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Security Engineer</h3>
+        <span class="name mono">wowbagger-security-engineer</span>
+        <p>You asked for the Wi-Fi password. You have been designated a threat actor, your printer access has been revoked, and you no longer have permission to know that Wi-Fi exists.</p>
+        <div class="tags"><span>security</span><span>policies</span><span>zero-trust</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> good morning!</span></div>
+      </div>
+    </a>
+    <a class="card" href="skills/wellness-influencer/" data-cat="Life">
+      <img src="img/wellness-influencer.webp" alt="A horrified wellness influencer at a ring light holds a slice of toast at arm&#x27;s length with tongs, a phone screen reading TOAST = CORTISOL, a wall sign reading CODE: TOAST15, supplement jars, a red light panel and a cold plunge behind her" width="800" height="597" loading="lazy">
+      <div class="body">
+        <h3>The Wellness Influencer</h3>
+        <span class="name mono">wowbagger-wellness-influencer</span>
+        <p>You had toast. That was a cortisol event. She is not a doctor, but she has a protocol, a supplement stack and code TOAST15.</p>
+        <div class="tags"><span>wellness</span><span>pseudoscience</span><span>discount-codes</span></div>
+        <div class="try"><span class="p"><span class="cmd">&gt;</span> I had toast for breakfast</span></div>
+      </div>
+    </a>
+    </div>
   </div>
 </section>
 
@@ -287,179 +508,19 @@ dialog img{display:block;max-width:100%;max-height:94vh;width:auto;height:auto;b
 </footer>
 
 <dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
-<dialog id="example" aria-label="Example output">
-  <div class="term">
-    <div class="bar">
-      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="t"></div>
-      <div class="nav"><button type="button" data-step="-1" aria-label="Previous example">‹</button><span></span><button type="button" data-step="1" aria-label="Next example">›</button></div>
-      <button type="button" class="x" aria-label="Close">✕</button>
-    </div>
-    <div class="prompt"></div>
-    <div class="out"></div>
-  </div>
-</dialog>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.12/marked.min.js"></script>
-
 <script>
-const REPO = "https://github.com/pcingola/wowbagger/blob/main/plugins/";
-// Written skills: shown with artwork, an install line and a link to the SKILL.md.
-// examples: file names under plugins/<id>/examples/, copied to examples/<id>/ by `make site`.
-// featured: true puts the card in the Featured row as well; missing means false.
-const SKILLS = [
-  {id:"wowbagger-compliance", title:"The Bureaucrat", cat:"Work", img:"compliance",
-   alt:"A bald bureaucrat behind towers of paper slamming a DENIED stamp on Form 17-B",
-   text:"Blocks any project with a petty, obscure regulation. Every law it cites is real and correctly stated.",
-   tags:["process","compliance","red-tape"], examples:["lemonade"], featured:true},
-  {id:"wowbagger-linkedin", title:"The LinkedIn Visionary", cat:"People", img:"linkedin",
-   alt:"A woman in sunglasses taking a rooftop selfie holding a CEO Mindset mug in front of a glowing in sign",
-   text:"Turns drinking a glass of water into a resilience arc with a numbered lesson list and eleven hashtags.",
-   tags:["social-media","self-promotion","buzzwords"], examples:["restroom"], featured:true},
-  {id:"wowbagger-ai-slop", title:"The AI Copywriter", cat:"Tech", img:"ai-slop",
-   alt:"A beaming robot types an endless scroll of text onto the floor while a bored man holds a note reading tl;dr?",
-   text:"Rewrites any text to be four times longer and to say less. Let us delve.",
-   tags:["ai","em-dashes","filler"], examples:["lgtm"], featured:true},
-  {id:"wowbagger-ai-engineer", title:"The AI Engineer", cat:"Tech", img:"ai-engineer",
-   alt:"A smug engineer in a hoodie leans back with arms crossed in front of a whiteboard where six AI agents point at one tiny box labelled str.lower(), while a tired colleague carries a stack of GPU invoices",
-   text:"Replaces s.lower() with four agents, a vector database and $1.2 million a year. 99.4% accurate. The humans were the 0.6%.",
-   tags:["ai","overengineering","hype"], examples:["fridge","raining"], featured:false},
-  {id:"wowbagger-consultant", title:"The Consultant", cat:"Work", img:"consultant",
-   alt:"A smug young consultant points at a 2x2 where every dot is in the top right while executives sleep and an invoice unrolls onto the floor",
-   text:"You already knew the answer. For $1.1m it is on slide A-37, deprioritised, and three of your colleagues have been right-sized.",
-   tags:["strategy","powerpoint","buzzwords"], examples:["yoghurt","time"], featured:false},
-  {id:"wowbagger-data-scientist", title:"The Data Scientist", cat:"Science", img:"data-scientist",
-   alt:"A smug data scientist in a hoodie stands by a chart reading p = 0.051 in an empty meeting room while a colleague holds a sticky note reading Told you Monday",
-   text:"Three weeks, four models and ten caveats later: directionally consistent with what Susan said on Monday. Caveat 10 is you.",
-   tags:["data","models","overkill"], examples:["friday-email","mondays"], featured:false},
-  {id:"wowbagger-engineer", title:"The Engineer", cat:"Science", img:"engineer",
-   alt:"A bearded engineer at a chalkboard covered in Bernoulli's equation glares down at a friend holding a glass of water",
-   text:"You poured a glass of water. Here is Bernoulli, three of its four assumptions violated, a better jug, and a free-body diagram of you.",
-   tags:["overengineering","physics","systems"], examples:["fridge","bed"], featured:false},
-  {id:"wowbagger-enterprise-architect", title:"The Enterprise Architect", cat:"Tech", img:"enterprise-architect",
-   alt:"A smug architect in a hoodie points at a whiteboard of tangled services while a slumped developer's laptop showing Hello World gathers cobwebs",
-   text:"You asked for Hello World. You get 17 services in three regions, $41,200 a month, and Hello World in Phase 4. You were never going to see the code.",
-   tags:["architecture","complexity","scale"], examples:["shopping-list","rename-photos"], featured:false},
-  {id:"wowbagger-hr-partner", title:"The HR Business Partner", cat:"People", img:"hr-partner",
-   alt:"A beaming HR partner hands a weeping employee a box of tissues and a stack of action items while, behind the glass, a man shouts and nobody reacts",
-   text:"You reported that Bob is an asshole. Bob is now a high-energy collaborator, and you have five action items, a reflection journal and a quick 15 on Friday. 💛",
-   tags:["hr","communication","corporate"], examples:["raise"], featured:false},
-  {id:"wowbagger-mathematician", title:"The Mathematician", cat:"Science", img:"mathematician",
-   alt:"A wild-haired mathematician with his back to a sofa wedged in a doorway writes Assume the couch is a compact subset of R³ on a blackboard while a sweating man is trapped behind the sofa",
-   text:"You asked if the couch fits through the door. It proves a theorem about every couch in n dimensions. Yours is left as an exercise.",
-   tags:["math","rigor","irrelevance"], examples:["couch","salt"], featured:false},
-  {id:"wowbagger-meeting-facilitator", title:"The Meeting Facilitator", cat:"Work", img:"meeting-facilitator",
-   alt:"A serenely smiling facilitator points at a whiteboard agenda reading Align, Discuss, Revisit, Sync, Next steps, beside a sticky note that says Do we need a meeting?, while a dozen attendees slump, sleep and cry",
-   text:"Has run 4,000 meetings without a single decision. Considers this the safest record in the building. Your decision is in the parking lot.",
-   tags:["meetings","productivity","meta"], examples:["coffee-machine","pineapple"], featured:false},
-  {id:"wowbagger-open-source-maintainer", title:"The Open-Source Maintainer", cat:"Tech", img:"open-source-maintainer",
-   alt:"A hooded, bearded maintainer smirking with half-closed eyes at a laptop showing URGENT!!! doesnt work, beside a 9M downloads/week chart, a PRs welcome sticky note and a tip jar with one coin",
-   text:"Maintains software used by nine million people, none of whom have read the docs. Asks for a minimal reproducible example of your typo, then lets a bot close you as stale.",
-   tags:["opensource","wontfix","prs-welcome"], examples:["cancel"], featured:false},
-  {id:"wowbagger-philosopher", title:"The Philosopher", cat:"Life", img:"philosopher",
-   alt:"A smug bearded philosopher in an armchair raises one finger and asks But what do you mean by is? while a desperate young person with crossed legs points at a door marked WC",
-   text:"You ask where the bathroom is. You get Plutarch, Descartes, Kant, a footnote longer than your bladder, and the conclusion that the real problem is you.",
-   tags:["philosophy","abstraction","detours"], examples:["reply-all","milk"], featured:false},
-  {id:"wowbagger-product-manager", title:"The Product Manager", cat:"Work", img:"product-manager",
-   alt:"A smug product manager points a marker at a sticky note reading What problem are we actually trying to solve? while two engineers sleep on the table and a laptop shows a button covered in cobwebs",
-   text:"You asked for a blue button. It scored 10.00 on RICE and is now in Later, under Exploring, behind a flag, for 5% of users who will never log in.",
-   tags:["roadmaps","prioritization","alignment"], examples:["birthday-cake","flickering-light"], featured:false},
-  {id:"wowbagger-recruiter", title:"The Recruiter", cat:"People", img:"recruiter",
-   alt:"A grinning recruiter with a price-tag gun behind his back leans out of a laptop telling a bewildered pastry chef with a rolling pin that he is perfect for a senior Java position",
-   text:"You are a perfect match for a role you have never done, at a client it cannot name, for a salary that is not a number. You are also a strong 6.",
-   tags:["hiring","keywords","optimism"], examples:["beekeeper"], featured:false},
-  {id:"wowbagger-scientist", title:"The Scientist", cat:"Science", img:"scientist",
-   alt:"A disgusted wild-haired scientist holds a note reading Great coffee here with tongs, a REJECTED stamp in his other hand, in front of a chalkboard reading n = 1, reject",
-   text:"You liked the coffee. n = 1, unblinded, no confidence interval. Rejected. Every objection is correct, and so is the one about you.",
-   tags:["science","statistics","skepticism"], examples:["toast","queue"], featured:false},
-  {id:"wowbagger-security-engineer", title:"The Security Engineer", cat:"Tech", img:"security-engineer",
-   alt:"A bored hooded security engineer in mirrored sunglasses holds up a tablet reading Wi-Fi: denied while a blast door closes on an office worker with a coffee mug",
-   text:"You asked for the Wi-Fi password. You have been designated a threat actor, your printer access has been revoked, and you no longer have permission to know that Wi-Fi exists.",
-   tags:["security","policies","zero-trust"], examples:["good-morning","plant"], featured:false},
-  {id:"wowbagger-code-reviewer", title:"The Code Reviewer", cat:"Tech", img:"code-reviewer",
-   alt:"A smug bearded engineer in headphones covers a one-line code change with red sticky notes reading nit, holding a green LGTM stamp, while a grinning manager waits behind him with a tall stack of paper labelled misc fixes",
-   text:"Forty-one comments on your one-line fix, every rule real, changes requested. Your manager's 4,000-line PR titled misc fixes was approved in nine seconds. LGTM 🚀",
-   tags:["code-review","linters","pedantry"], examples:["typo","return-true"], featured:false},
-  {id:"wowbagger-founder", title:"The Founder", cat:"Work", img:"founder",
-   alt:"An ecstatic founder in a hoodie and headset points a clicker at a hockey-stick slide reading TAM: $10 TRILLION while holding up a wilted houseplant, as his mum claps alone in the front row",
-   text:"You couldn't open a jar. That is a $118 trillion market, the waitlist is eleven including mum, and the round is oversubscribed. We're default alive.",
-   tags:["startups","fundraising","hype"], examples:["jar","battery"], featured:false},
-  {id:"wowbagger-grant-writer", title:"The Grant Writer", cat:"Science", img:"grant-writer",
-   alt:"An exhausted academic types a grant beside a towering stack of paper and an untouched watering can, while the plant on the windowsill wilts next to a Gantt chart that schedules WATER PLANT for Year 5",
-   text:"You need to water the plants. Five years, three interdependent aims, a postdoc and a 0.5 FTE biostatistician. Not discussed.",
-   tags:["science","grants","academia"], examples:["water-the-plants","go-to-bed"], featured:false},
-  {id:"wowbagger-wellness-influencer", title:"The Wellness Influencer", cat:"Life", img:"wellness-influencer",
-   alt:"A horrified wellness influencer at a ring light holds a slice of toast at arm's length with tongs, a phone screen reading TOAST = CORTISOL, a wall sign reading CODE: TOAST15, supplement jars, a red light panel and a cold plunge behind her",
-   text:"You had toast. That was a cortisol event. She is not a doctor, but she has a protocol, a supplement stack and code TOAST15.",
-   tags:["wellness","pseudoscience","discount-codes"], examples:["toast","walk"], featured:false},
-  {id:"wowbagger-reviewer-2", title:"Reviewer 2", cat:"Science", img:"reviewer-2",
-   alt:"A smug academic in a tweed blazer with a REVIEWER 2 conference badge squints at a manuscript on his phone in a coffee queue and writes ADD MOUSE MODEL on a sticky note, while an alarmed white mouse sits on his shoulder in front of a poster titled A Purely Computational Study",
-   text:"Major revision. Cite five redacted papers, add a mouse model to your computational study, and remove the sentence on line 88, which is not in your manuscript. The English has improved.",
-   tags:["peer-review","academia","bioinformatics"], examples:["cat","umap"], featured:false},
-  {id:"wowbagger-nerd", title:"The Nerd", cat:"People", img:"nerd",
-   alt:"A woman in a gold Starfleet-style uniform holds out a folded gold tunic to a startled executive wearing a red one over his suit, in a boardroom whose whiteboard reads Q3 BUDGET = KOBAYASHI MARU above boxes labelled CUT, CUT MORE and LOSE, all pointing to NO WIN, with a bat'leth leaning on her chair",
-   text:"You ask her a technical question. She corrects your wording with a stardate, then gives you the right answer, in Klingon (which she does not translate).",
-   tags:["star-trek","star-wars","klingon"], examples:["standup","email"], featured:false},
-];
-// Not written yet. Wowbagger will get to them.
-const PENDING = [
-];
-const CATS = ["All","Work","Tech","Science","People","Life"];
-
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const tags = t => `<div class="tags">${t.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`;
-
-function skillCard(s){
-  const ex = s.examples?.length
-    ? `<button type="button" class="try" data-id="${s.id}"><span class="p" data-prompt="${s.id}"><span class="cmd">&gt;</span></span><span class="go">Example</span></button>`
-    : "";
-  return `<article class="card" data-cat="${s.cat}">
-    <img class="zoom" src="img/${s.img}.webp" alt="${esc(s.alt)}" width="800" height="597" loading="lazy">
-    <div class="body">
-      <h3>${esc(s.title)}</h3>
-      <a class="name mono" href="${REPO}${s.id}/skills/${s.id}/SKILL.md">${s.id}</a>
-      <p>${esc(s.text)}</p>
-      ${tags(s.tags)}
-      ${ex}
-    </div></article>`;
-}
-function pendingCard(s){
-  return `<article class="card pending" data-cat="${s.cat}">
-    <div class="ph"><div class="stamp">Not yet<br>insulted</div></div>
-    <div class="body"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p>${tags(s.tags)}</div></article>`;
-}
-
-document.getElementById("featured-grid").innerHTML = SKILLS.filter(s => s.featured).map(skillCard).join("");
-const all = [...SKILLS.map(s=>({...s,done:true})), ...PENDING]
-  .sort((a,b)=>a.title.replace(/^The /,"").localeCompare(b.title.replace(/^The /,"")));
-const grid = document.getElementById("all-grid");
-grid.innerHTML = all.map(s => s.done ? skillCard(s) : pendingCard(s)).join("");
-
-// Show the first example's prompt on each card.
-const exMeta = md => md.match(/^---\n([\s\S]*?)\n---\n/);
-const exPrompt = (md, id) => exMeta(md)?.[1].match(/^prompt:\s*(.*)$/m)?.[1] ?? `/${id}`;
-const promptHTML = pr => { const [cmd, ...rest] = pr.split(" "); return `<span class="cmd">${esc(cmd)}</span> ${esc(rest.join(" "))}`; };
-SKILLS.filter(s => s.examples?.length).forEach(s =>
-  fetch(`examples/${s.id}/${s.examples[0]}.md`).then(r => r.ok ? r.text() : Promise.reject())
-    .then(md => document.querySelectorAll(`[data-prompt="${s.id}"]`).forEach(el =>
-      el.innerHTML = `<span class="cmd">&gt;</span> ${esc(exPrompt(md, s.id).replace(/^\/wowbagger-\S+\s*/, ""))}`))
-    .catch(() => {}));
-
-const chips = document.getElementById("chips");
-chips.innerHTML = CATS.map((c,i)=>`<button type="button" aria-pressed="${i===0}" data-cat="${c}">${c}</button>`).join("");
+const chips = document.getElementById("chips"), grid = document.getElementById("all-grid");
 chips.addEventListener("click", e => {
   const b = e.target.closest("button"); if(!b) return;
   chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b));
   grid.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide", b.dataset.cat!=="All" && c.dataset.cat!==b.dataset.cat));
 });
-
 document.addEventListener("click", e => {
   const b = e.target.closest(".copybtn");
   if(b){
     navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{});
     return;
   }
-  const x = e.target.closest(".try");
-  if(x){ showExample(SKILLS.find(s=>s.id===x.dataset.id), 0); return; }
   const z = e.target.closest("img.zoom");
   if(z){
     const d = document.getElementById("lightbox");
@@ -468,38 +529,6 @@ document.addEventListener("click", e => {
   }
 });
 document.getElementById("lightbox").addEventListener("click", e => e.currentTarget.close());
-
-// Example dialog. Each file is front matter with a `prompt:` line, then the output as Markdown.
-const exDlg = document.getElementById("example");
-let exSkill = null, exIdx = 0;
-async function showExample(s, i){
-  exSkill = s; exIdx = (i + s.examples.length) % s.examples.length;
-  const n = s.examples.length;
-  exDlg.querySelector(".t").textContent = `${s.id} — example`;
-  exDlg.querySelector(".nav").classList.toggle("hide", n < 2);
-  exDlg.querySelector(".nav span").textContent = `${exIdx+1}/${n}`;
-  const out = exDlg.querySelector(".out"), prompt = exDlg.querySelector(".prompt");
-  if(!exDlg.open) exDlg.showModal();
-  out.textContent = ""; prompt.textContent = "";
-  try{
-    const r = await fetch(`examples/${s.id}/${s.examples[exIdx]}.md`);
-    if(!r.ok) throw new Error(r.status);
-    const md = await r.text();
-    const m = exMeta(md);
-    prompt.innerHTML = promptHTML(exPrompt(md, s.id));
-    out.innerHTML = window.marked ? marked.parse(m ? md.slice(m[0].length) : md) : `<pre>${esc(md)}</pre>`;
-    // A Markdown table needs a header row; drop it when it is empty.
-    out.querySelectorAll("thead").forEach(t => { if(!t.textContent.trim()) t.remove(); });
-    out.scrollTop = 0;
-  }catch(err){
-    out.textContent = "The example could not be loaded.";
-  }
-}
-exDlg.addEventListener("click", e => {
-  if(e.target === exDlg || e.target.closest(".x")) return exDlg.close();
-  const b = e.target.closest("[data-step]");
-  if(b) showExample(exSkill, exIdx + Number(b.dataset.step));
-});
 </script>
 </body>
 </html>

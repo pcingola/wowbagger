@@ -34,5 +34,11 @@ jobs:
               assert skill.read_text().startswith("---\nname: " + p["name"] + "\n"), skill
           print(len(m["plugins"]), "plugins OK")
           PY
-      - name: docs/ matches src/html/
-        run: make site && git diff --exit-code -- docs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: docs/ matches the generator output
+        run: |
+          make site
+          git add -N docs
+          git diff --exit-code -- docs

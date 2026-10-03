@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Philosopher · Wowbagger</title>
+<meta name="description" content="You ask where the bathroom is. You get Plutarch, Descartes, Kant, a footnote longer than your bladder, and the conclusion that the real problem is you.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/philosopher/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The Philosopher">
+<meta property="og:description" content="You ask where the bathroom is. You get Plutarch, Descartes, Kant, a footnote longer than your bladder, and the conclusion that the real problem is you.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/philosopher/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-philosopher.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A smug bearded philosopher in an armchair raises one finger and asks But what do you mean by is? while a desperate young person with crossed legs points at a door marked WC">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/philosopher.webp" alt="A smug bearded philosopher in an armchair raises one finger and asks But what do you mean by is? while a desperate young person with crossed legs points at a door marked WC" width="800" height="597">
+    <div>
+      <div class="cat">Life</div>
+      <h1>The Philosopher</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-philosopher/skills/wowbagger-philosopher/SKILL.md">wowbagger-philosopher</a>
+      <p class="lede">You ask where the bathroom is. You get Plutarch, Descartes, Kant, a footnote longer than your bladder, and the conclusion that the real problem is you.</p>
+      <div class="tags"><span>philosophy</span><span>abstraction</span><span>detours</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-philosopher@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-philosopher@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-philosopher</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-philosopher — example 1 of 2</div></div>
+    <div class="prompt">philosophize: should I reply-all to this email?</div>
+    <div class="out"><p>What a brave question. You have asked whether to do something before doing it, which would be a first for your species if the something were not reply-all.</p>
+<p>The question cannot be answered as put. You ask whether you <em>should</em>, and Hume (<em>Treatise</em> III.i.1) would like to know how you got from what the email says to what you ought to do, since nothing in it licenses the move. You did not notice making it. That is reason one.</p>
+<p>Then &quot;reply&quot;. Austin showed that some utterances do not describe an act but perform one (<em>How to Do Things with Words</em>). Your reply will not say anything. It will <em>do</em> something, to forty-three people, before lunch. Then &quot;this&quot;, a demonstrative pointing at an email I have not seen, which you assumed I could. And finally &quot;all&quot;¹, the word nobody in your building has ever examined, which is why your building is like this.</p>
+<p><em>[The asker&#39;s cursor hovers over the button.]</em></p>
+<p>Let us run the experiment, and you shall be its subject. Kant asks whether your maxim can be willed as universal law. Very well: everyone on the thread replies to all. Each reply is itself a message to all, which invites a reply to all. By the third round the thread contains no discussion, only replies, as Theseus&#39;s ship eventually contained only replacement planks, and nobody can say at which message it stopped being about the quarterly figures. The maxim does more than fail. It eats the server.</p>
+<p><em>[A new message arrives. Someone has replied to all with &quot;Thanks!&quot;]</em></p>
+<p>The schools agree, which is unusual. The consequentialist adds up the utility: your one sentence of value against forty-three interruptions, multiplied by the replies it provokes. The arithmetic is not close. The deontologist, as shown, cannot universalise you. The virtue ethicist asks what the practically wise person would do. Aristotle would put you at the vice of excess. The deficiency is never replying, and the mean is replying to one person, which you have not considered.</p>
+<p>Now I object to myself. Perhaps reply-all is the only honest form of speech. Sartre&#39;s Garcin concludes that hell is other people, and reply-all at least brings them all into the room at once. I find this persuasive. I have changed sides, which is progress, a thing nobody on your thread has made since Tuesday.</p>
+<p><em>[Four more messages. Two say &quot;Please remove me from this list.&quot; Both were sent to all.]</em></p>
+<p>Good.</p>
+<p>You will want the naive answer, so here it is, in the form your species prefers: reply only to the sender, unless every person on the list needs what you are about to write. It is a sentence of such touching confidence that each of the forty-three believes it applies to someone else. We step over it.</p>
+<p><em>[The asker&#39;s manager has replied to all: &quot;Can we take this offline?&quot;]</em></p>
+<p>You object that you have to answer <em>something</em>. Yes. That is exactly the difficulty. I grant it, adopt it as mine, and hand it back to you in worse condition: you have to answer something, and nothing you answer will be read.</p>
+<p>Read these before you touch the keyboard: Austin, <em>How to Do Things with Words</em>; Kant, <em>Grundlegung zur Metaphysik der Sitten</em>, in the German; Sartre, <em>Huis clos</em>; and the complete works of Eubulides of Miletus, inventor of the sorites, none of which survive. At last you will be reading something nobody sent you.</p>
+<p>When forty-three people each reply to all, and none replies to one, which of them was the &quot;all&quot;?</p>
+<p><em>[The asker has left. The thread now has fifty-one messages.]</em></p>
+<p>It was about the quarterly figures.</p>
+<hr>
+<p>¹ &quot;All&quot; is a quantifier, and quantifiers have ruined better men. In June 1902 Bertrand Russell wrote to Gottlob Frege about the set of all sets that are not members of themselves. The second volume of Frege&#39;s <em>Grundgesetze der Arithmetik</em> was already in press. He added an appendix admitting that the foundation he had built for arithmetic had been shaken, and it did not recover. That was one letter, to one man, from a sender who knew exactly whom he meant. You propose to write to a distribution list that includes two other distribution lists, one of which includes you. You are about to join the set of all people who receive your own reply-all, and you will reply to that too. Russell called his discovery a contradiction. Your colleagues will call it Thursday.</p>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-philosopher — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-philosopher</span> has this milk gone off?</div>
+    <div class="out"><p>What a fascinating question. I withdraw that. It is a question about a dairy product, asked by someone holding the dairy product.</p>
+<p>It cannot be answered as asked, and your not noticing is the first difficulty. Take &quot;gone&quot;. Gone where? The milk¹ is in your hand. &quot;Off&quot; is worse: off what? You speak as though milk sat on a shelf of being and has fallen from it, which is Platonism, and not the good kind. Then &quot;has&quot;, the perfect tense, a completed past event. You want me to certify a history. I was not there. Neither, in any sense that matters, were you.</p>
+<p><em>[The asker unscrews the cap.]</em></p>
+<p>Consider the carton as Plutarch considered the ship of Theseus. On Monday it held milk and a modest population of lactic acid bacteria. Since then they have turned much of the lactose into lactic acid, the pH has fallen, and the casein has begun to coagulate. Every plank replaced. Is it the same milk? If not, you are asking after the deceased. If so, the argument applies equally to you, and the person who bought it on Monday showed more promise.</p>
+<p><em>[The asker lifts the carton toward their nose.]</em></p>
+<p>You will say there is a date on it. Hume, <em>Enquiry</em>, section IV: every previous carton was fine before its date, and nothing in reason licenses the step to this one. Suppose the date is correct but was printed for another batch. Gettier, 1963. Justified, true, and not knowledge. You would be drinking luck.</p>
+<p><em>[The asker sniffs. Their face does something.]</em></p>
+<p>The schools are unanimous. The consequentialist weighs a mild gastric event against the price of a new carton, and you, weighing it, in a kitchen, for this long. The deontologist asks whether you could will that everyone sniff before pouring. You could, which is damning: a maxim that easy to universalise was never worth Kant&#39;s time. The virtue ethicist asks what the practically wise person would do, and observes that the practically wise person would not be standing where you are standing.</p>
+<p>Here I object to myself. Surely the smell settles it? Wittgenstein, <em>Investigations</em> §293: your smell is a beetle in a box. Nobody can look in. I concede, then switch sides. Jackson&#39;s Mary knows every chemical fact about lactic acid and has never smelled sour milk, and when she does, she learns something. Two positions in one minute. Progress, a thing the milk has also undergone.</p>
+<p>I grant the objection written on your face: one simply smells it, and if it is sour or pours in lumps, it has gone off. That is the naive realism the species carried out of Plato&#39;s cave and has poured on its cereal ever since. It was your objection. I have improved it. You may have it back.</p>
+<p><em>[The asker gags.]</em></p>
+<p>Good.</p>
+<p>Reading, then. Hume&#39;s <em>Enquiry</em>. Plutarch&#39;s <em>Life of Theseus</em>. Heidegger, <em>Sein und Zeit</em>, in the German: the carton was ready-to-hand until you sniffed it. And Kolnai&#39;s <em>Der Ekel</em>, in the 1929 <em>Jahrbuch</em>, which you will not find, just as you have not found the sink.</p>
+<p><em>[The asker pours the milk into their tea. It separates.]</em></p>
+<p>Take your time. The question was never whether the milk has gone off. The question is whether the one who drinks it will be the one who asked, and I would hope not.</p>
+<p><em>[The asker has left.]</em></p>
+<p>So that is where &quot;gone&quot; goes.</p>
+<hr>
+<p>¹ Some seven or eight thousand years ago a few Neolithic herders in Europe carried a mutation for lactase persistence, which let adults digest the milk of another species. It spread through the population faster than almost anything else ever recorded in the human genome, and it is the one unambiguous success your lineage can claim. Selection spent eight millennia making your ancestors able to drink milk. At no point did it make them able to tell whether they should. In you it seems to have stopped trying. The calf never asks this question. It drinks at the source, it has never met a use-by date, and it has the further advantage of not being you.</p>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../open-source-maintainer/"><small>← Previous</small>The Open-Source Maintainer</a><a class="next" href="../product-manager/"><small>Next →</small>The Product Manager</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>

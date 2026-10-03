@@ -6,3 +6,5 @@
 # Working notes, not part of the deliverable
 tmp/
 plans/
+
+node_modules/

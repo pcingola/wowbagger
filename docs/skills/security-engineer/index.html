@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Security Engineer · Wowbagger</title>
+<meta name="description" content="You asked for the Wi-Fi password. You have been designated a threat actor, your printer access has been revoked, and you no longer have permission to know that Wi-Fi exists.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/security-engineer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The Security Engineer">
+<meta property="og:description" content="You asked for the Wi-Fi password. You have been designated a threat actor, your printer access has been revoked, and you no longer have permission to know that Wi-Fi exists.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/security-engineer/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-security-engineer.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A bored hooded security engineer in mirrored sunglasses holds up a tablet reading Wi-Fi: denied while a blast door closes on an office worker with a coffee mug">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/security-engineer.webp" alt="A bored hooded security engineer in mirrored sunglasses holds up a tablet reading Wi-Fi: denied while a blast door closes on an office worker with a coffee mug" width="800" height="597">
+    <div>
+      <div class="cat">Tech</div>
+      <h1>The Security Engineer</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-security-engineer/skills/wowbagger-security-engineer/SKILL.md">wowbagger-security-engineer</a>
+      <p class="lede">You asked for the Wi-Fi password. You have been designated a threat actor, your printer access has been revoked, and you no longer have permission to know that Wi-Fi exists.</p>
+      <div class="tags"><span>security</span><span>policies</span><span>zero-trust</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-security-engineer@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-security-engineer@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-security-engineer</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-security-engineer — example 1 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-security-engineer</span> good morning!</div>
+    <div class="out"><h1>SECURITY INCIDENT</h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>SEC-INC-2026-11307</td>
+</tr>
+<tr>
+<td>Severity</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>TLP:RED. Named recipients only. The requester is not a named recipient.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>CONTAINED</td>
+</tr>
+<tr>
+<td>Detected</td>
+<td>2026-10-02 08:47:13 UTC</td>
+</tr>
+</tbody></table>
+<h2>Event summary</h2>
+<p>An unauthenticated party sent an unsolicited greeting (&quot;good morning!&quot;) to a protected system. The message asserted knowledge of the local time of day, claimed the morning was &quot;good&quot; without evidence, and ended in an exclamation mark, which was assessed as an attempt to build rapport. No access was requested. This is how requests for access begin.</p>
+<h2>Threat classification</h2>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discovery (TA0007)</td>
+<td>T1124, System Time Discovery. The requester already knew it was morning, so discovery had already taken place.</td>
+</tr>
+<tr>
+<td>Reconnaissance (TA0043)</td>
+<td>T1598, Phishing for Information. The greeting invited a reply, and a reply would have confirmed that the target was live.</td>
+</tr>
+</tbody></table>
+<p>The event was reported to the SOC as a probable phishing simulation. The simulation was passed. The requester would have clicked.</p>
+<h2>Decision</h2>
+<p><strong>DENIED.</strong></p>
+<ul>
+<li><strong>NIST SP 800-207 (Zero Trust Architecture):</strong> no implicit trust is granted on the basis of network location or familiarity. A friendly tone counts as familiarity. Trust was not granted.</li>
+<li><strong>NIST SP 800-53 AC-8 (System Use Notification):</strong> the system displays its use notification before any interaction. The requester spoke first, before the banner was shown, and the session was voided.</li>
+<li><strong>NIST SP 800-53 AC-6 (Least Privilege):</strong> a reply grants the least privilege needed to receive a reply. The least privilege the requester needs is none.</li>
+<li><strong>ISO/IEC 27001:2022 Annex A 5.15 (Access control):</strong> access rules follow business requirements. No business requirement for &quot;good&quot; was found.</li>
+</ul>
+<p>The handshake failed. The SYN was received and the ACK was withheld.</p>
+<h2>Containment actions taken</h2>
+<ol>
+<li>The greeting was quarantined. It was not returned.</li>
+<li>The requester&#39;s endpoint was moved to an isolated VLAN, which has no sunrise.</li>
+<li>The requester&#39;s calendar was set to read-only, with every slot before 12:00 marked Busy.</li>
+<li>The requester&#39;s badge was restricted to the lobby, and the lobby lights were set to a schedule the requester does not know.</li>
+<li>The requester was designated <strong>UNC-7731</strong>. They are referred to only by this ID from here on, which is a relief to everyone.</li>
+</ol>
+<h2>Retroactive findings</h2>
+<p>UNC-7731 has received accurate time from the corporate NTP servers since 09:14 on 6 May 2019. That is how they knew it was morning. Seven years of time synchronisation are now treated as an open exposure. Every greeting UNC-7731 has sent since 2019 was timestamp-correlated, and the blast radius covers roughly 1,700 mornings, about 40 of which were described as good. Their system clock has been revoked. UNC-7731 no longer knows what time it is, and has no clearance to find out.</p>
+<p>Plain NTP is unauthenticated and can be spoofed, while log correlation depends on accurate time. Network Time Security (RFC 8915) adds cryptographic authentication to NTP and should be enabled wherever the infrastructure supports it.</p>
+<h2>Exception process</h2>
+<p>A risk acceptance signed by the CISO is required. The CISO is away running a tabletop exercise about a breach that began when a cheerful employee said hello.</p>
+<h2>Required training</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Greeting Without Elevation</td>
+<td>4h</td>
+</tr>
+<tr>
+<td>Mornings Are Need-to-Know</td>
+<td>4h</td>
+</tr>
+<tr>
+<td>The Exclamation Mark as an Indicator of Compromise</td>
+<td>4h</td>
+</tr>
+</tbody></table>
+<p>Every quiz question has the answer &quot;report it&quot;. This includes &quot;What time is it?&quot;, which UNC-7731 can no longer answer anyway.</p>
+<p>It is still morning. UNC-7731 will not be told for how long.</p>
+<p><em>This message has been encrypted, signed and logged. Do not reply. Replies are treated as a second attempt.</em></p>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-security-engineer — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-security-engineer</span> can I bring a plant to the office?</div>
+    <div class="out"><h1>SECURITY INCIDENT</h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID</td>
+<td>SEC-INC-2026-11307</td>
+</tr>
+<tr>
+<td>Severity</td>
+<td><strong>High</strong> (pending upgrade)</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>TLP:RED. Named recipients: SOC, CISO. The requester is not a named recipient.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td><strong>CONTAINED</strong></td>
+</tr>
+</tbody></table>
+<h2>Event summary</h2>
+<p>At 09:41 on 2 October 2026, an unauthenticated party asked about bringing a living organism into the controlled area. The organism&#39;s origin, its roots and the contents of its soil were not disclosed. The request was phrased as a question. Questions are reconnaissance.</p>
+<h2>Threat classification</h2>
+<p>The requester has been designated <strong>UNC-7752</strong>. The activity maps to Initial Access (TA0001) via T1200, Hardware Additions: an unmanaged physical asset introduced into the environment. The asset is not hardware. That has been noted as an attempt to evade classification.</p>
+<h2>Decision</h2>
+<p><strong>DENIED.</strong></p>
+<ul>
+<li><strong>NIST SP 800-207</strong> (Zero Trust Architecture): an asset is not trusted on the basis of who owns it. UNC-7752 owns it, which counts against it.</li>
+<li><strong>ISO/IEC 27001:2022 A.7.2</strong>, Physical entry: secure areas are protected by entry controls. The plant has no badge, and it cannot be issued one because it has no face for the photo.</li>
+<li><strong>ISO/IEC 27001:2022 A.7.7</strong>, Clear desk and clear screen: a desk with a plant on it is not clear. It is a desk that is growing.</li>
+<li><strong>ISO/IEC 27001:2022 A.5.15</strong>, Access control: access requires a business requirement. Photosynthesis is not a business requirement.</li>
+</ul>
+<p>A pot with no electronics is not a network device. A &quot;smart&quot; pot with Wi-Fi is one, and IoT devices go on a segregated network, never on the corporate one. Both versions are denied.</p>
+<h2>Containment actions taken</h2>
+<ol>
+<li>A ticket has been opened. UNC-7752 has not been given the ticket number.</li>
+<li>UNC-7752&#39;s calendar has been set to private, to prevent watering-schedule analysis.</li>
+<li>The desk has been moved away from the window. Sunlight is an input to the asset.</li>
+<li>The badge now opens the lobby only. The lobby has a plant. UNC-7752 is not to look at it.</li>
+<li>UNC-7752&#39;s knowledge of the word &quot;fern&quot; has been formally revoked.</li>
+</ol>
+<p>The request has been pruned. Root access was never on offer.</p>
+<h2>Retroactive findings</h2>
+<p>The ficus in reception was installed at 08:15 on 14 March 2022 and was never onboarded under <strong>A.5.19</strong>, Information security in supplier relationships. Since then UNC-7752 has breathed oxygen produced by this supplier on every working day, about 900 of them. This is a supply-chain dependency that was never assessed. UNC-7752 has been running on output from an unvetted vendor for four years, and the CO₂ sent back to it has never been inspected by DLP (Data Loss Prevention). We are still working out what was exhaled.</p>
+<h2>Exception process</h2>
+<p>The exception needs a risk acceptance signed by the CISO (Chief Information Security Officer). The CISO is away until Q1 running a tabletop exercise that simulates a breach caused by someone exactly like UNC-7752, holding a succulent.</p>
+<h2>Required training</h2>
+<ul>
+<li>Recognising Yourself as a Threat (4h)</li>
+<li>Biological Endpoints: Why Things That Grow Cannot Be Patched (4h)</li>
+<li>Soil as Unclassified Storage Media (4h)</li>
+</ul>
+<p>Quiz, sample question: &quot;A colleague offers you a cutting. What do you do?&quot; Answer: report it. Next question: &quot;What is your name?&quot; Answer: report it.</p>
+<p>The dashboard is entirely green. The plant would have been too, and that was the problem.</p>
+<p><em>This message has been encrypted, signed and logged. Do not reply. Replies are treated as a second attempt.</em></p>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../scientist/"><small>← Previous</small>The Scientist</a><a class="next" href="../wellness-influencer/"><small>Next →</small>The Wellness Influencer</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>

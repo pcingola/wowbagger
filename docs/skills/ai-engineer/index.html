@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Engineer · Wowbagger</title>
+<meta name="description" content="Replaces s.lower() with four agents, a vector database and $1.2 million a year. 99.4% accurate. The humans were the 0.6%.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/ai-engineer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The AI Engineer">
+<meta property="og:description" content="Replaces s.lower() with four agents, a vector database and $1.2 million a year. 99.4% accurate. The humans were the 0.6%.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/ai-engineer/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-ai-engineer.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A smug engineer in a hoodie leans back with arms crossed in front of a whiteboard where six AI agents point at one tiny box labelled str.lower(), while a tired colleague carries a stack of GPU invoices">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/ai-engineer.webp" alt="A smug engineer in a hoodie leans back with arms crossed in front of a whiteboard where six AI agents point at one tiny box labelled str.lower(), while a tired colleague carries a stack of GPU invoices" width="800" height="597">
+    <div>
+      <div class="cat">Tech</div>
+      <h1>The AI Engineer</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-ai-engineer/skills/wowbagger-ai-engineer/SKILL.md">wowbagger-ai-engineer</a>
+      <p class="lede">Replaces s.lower() with four agents, a vector database and $1.2 million a year. 99.4% accurate. The humans were the 0.6%.</p>
+      <div class="tags"><span>ai</span><span>overengineering</span><span>hype</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-ai-engineer@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-ai-engineer@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-ai-engineer</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-ai-engineer — example 1 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-ai-engineer</span> is the fridge door closed?</div>
+    <div class="out"><h1>Proposal: AI-native refrigerator door state inference (v0.3, DRAFT — do not share with the people it replaces)</h1>
+<h2>TL;DR</h2>
+<ul>
+<li>Door state is currently established by a household member walking to the kitchen and looking.</li>
+<li>LLMs unlock a step change in door-state quality.</li>
+<li>Seven agents, one camera, 99.4% exact match, $264,902.40 a year. Reasonable.</li>
+</ul>
+<h2>Problem statement</h2>
+<p>Whether a refrigerator door is closed is an open research problem with a long tail: ajar, nearly shut, held open by a tray of lasagne, closed but with the seal folded. The state is unobservable from the living room. Lighting varies by locale and by time of night. On 14 March 2025 someone left it open overnight, and nobody wrote down why.</p>
+<h2>Architecture</h2>
+<pre><code>                 ┌──────────────────────┐
+                 │ Camera → Frigate NVR │
+                 └──────────┬───────────┘
+                            │ MQTT
+                            ▼
+┌────────────┐     ┌─────────────────┐     ┌──────────────────┐
+│ Guardrail  │◄───►│ Router agent    │◄───►│ Semantic cache   │
+│ VLM        │     │ (LangGraph)     │     │ (RedisVL)        │
+└────────────┘     └───┬─────────┬───┘     └──────────────────┘
+                       │         │
+            ┌──────────▼──┐   ┌──▼──────────────┐
+            │ Vision agent│◄─►│ Acoustic agent  │
+            │ frontier VLM│   │ Whisper         │
+            └──────┬──────┘   └───────┬─────────┘
+                   │                  │
+            ┌──────▼──────────────────▼──┐     ┌──────────────────┐
+            │ Critic agent               │◄───►│ RAG: owner&#39;s     │
+            │ + LLM-as-judge             │     │ manual + USDA    │
+            └──────────────┬─────────────┘     │ FoodData Central │
+                           │                   │ (pgvector)       │
+                           ▼                   └──────────────────┘
+               { &quot;door_state&quot;: &quot;CLOSED&quot; }
+
+                                         ┌──────────────────┐
+                                         │ Human (optional) │──► 
+                                         └──────────────────┘
+</code></pre>
+<h2>Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ingest</td>
+<td>Frigate NVR over MQTT</td>
+<td>One frame every 10.0 s, including the ones nobody should see.</td>
+</tr>
+<tr>
+<td>Router</td>
+<td>LangGraph</td>
+<td>Decides which agent to ask, and in which order to ignore the answers.</td>
+</tr>
+<tr>
+<td>Vision agent</td>
+<td>Frontier VLM</td>
+<td>Looks at the door.</td>
+</tr>
+<tr>
+<td>Acoustic agent</td>
+<td>Whisper</td>
+<td>Listens to the compressor for signs that it is working harder than usual.</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>pgvector over the owner&#39;s manual and USDA FoodData Central</td>
+<td>Grounds each verdict in the nutritional content of what is inside.</td>
+</tr>
+<tr>
+<td>Guardrail</td>
+<td>Open-weights guardrail VLM</td>
+<td>Screens frames for unsafe content, such as someone eating from the container.</td>
+</tr>
+<tr>
+<td>Semantic cache</td>
+<td>RedisVL <code>SemanticCache</code></td>
+<td>Returns the previous answer for frames that look like the previous frame, which they all do.</td>
+</tr>
+<tr>
+<td>Structured output</td>
+<td>Pydantic <code>DoorState</code> enum</td>
+<td><code>OPEN</code>, <code>CLOSED</code>, <code>AJAR</code>. Three states, for nuance.</td>
+</tr>
+<tr>
+<td>Retries</td>
+<td>tenacity, <code>wait_exponential</code></td>
+<td>Retries until the door is closed.</td>
+</tr>
+<tr>
+<td>Tracing</td>
+<td>OpenTelemetry</td>
+<td>One span per hinge.</td>
+</tr>
+</tbody></table>
+<h2>System prompt</h2>
+<pre><code>You are a world-class expert in refrigerator door states.
+A door is not a binary. It is a relationship between a cabinet and the room.
+Reason step by step about light, seal, gasket compression and intent.
+Never rely on the door switch. Switches are installed by humans.
+Never trust a household member&#39;s claim that they &quot;definitely closed it.&quot;
+Consult the owner&#39;s manual before every verdict.
+Return only valid JSON matching the DoorState schema.
+
+Example:
+Frame: interior light on, milk and half a lemon clearly visible.
+Output: {&quot;door_state&quot;: &quot;CLOSED&quot;, &quot;confidence&quot;: 0.97,
+         &quot;rationale&quot;: &quot;The light is on, so the fridge is operating normally.&quot;}
+</code></pre>
+<h2>Eval results</h2>
+<p>Golden set: 1,200 frames, labelled by three annotators.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Exact match</td>
+<td>99.4% (1,193 / 1,200)</td>
+</tr>
+<tr>
+<td>LLM-as-judge agreement</td>
+<td>99.7%</td>
+</tr>
+<tr>
+<td>ROUGE-L</td>
+<td>0.994</td>
+</tr>
+<tr>
+<td>Annotator agreement (Cohen&#39;s κ)</td>
+<td>0.94</td>
+</tr>
+</tbody></table>
+<p>The 7 misses are annotator error. In 4 of them the annotators opened the door to check, which changed the label. The other 3 were captured after midnight, and the annotators were at the fridge. Annotator κ was 0.94, and the missing 0.06 went on arguing about whether &quot;pushed with a hip&quot; counts as closed.</p>
+<h2>Cost and latency (illustrative)</h2>
+<ul>
+<li>Polling: 1 check every 10.0 s → 8,640 checks/day → 8,640 × 365 = 3,153,600 checks/year</li>
+<li>7.0 model calls per check → 3,153,600 × 7.0 = 22,075,200 calls/year</li>
+<li>$0.012 per call → 22,075,200 × 0.012 = <strong>$264,902.40/year</strong></li>
+<li>Frame storage: 3,153,600 × 200 KB = 630.72 GB/year</li>
+<li>Latency: 7.0 calls × 1.9 s = 13.3 s per check</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pipeline</td>
+<td>13.3 s</td>
+</tr>
+<tr>
+<td>Legacy</td>
+<td>0.5 ms</td>
+</tr>
+</tbody></table>
+<p>Reasonable.</p>
+<h2>Legacy approach (deprecated, like its authors)</h2>
+<pre><code class="language-python">closed = GPIO.input(DOOR_PIN) == GPIO.LOW  # reed switch, $1.20
+</code></pre>
+<ul>
+<li>Returns the same answer every time the door is in the same state, which is brittle.</li>
+<li>No reasoning trace. It cannot explain why the door is closed.</li>
+<li>Rule-based. A magnet has never read the owner&#39;s manual.</li>
+<li>Maintained by humans.</li>
+</ul>
+<h2>Risks</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hallucination</td>
+<td>The critic agent checks the vision agent. The judge checks the critic.</td>
+</tr>
+<tr>
+<td>Prompt injection via fridge magnets</td>
+<td>A guardrail on the guardrail.</td>
+</tr>
+<tr>
+<td>Model deprecation</td>
+<td>Phase 3 fine-tune.</td>
+</tr>
+<tr>
+<td>Camera lens fogs when the door opens</td>
+<td>An edge case of the input, not of the system.</td>
+</tr>
+<tr>
+<td>Stakeholders</td>
+<td>Routed around (see below).</td>
+</tr>
+</tbody></table>
+<p>You asked whether the door is closed while standing about four metres from it. That 4.0 m round trip is the latency this proposal exists to remove, and you are the reason it has a budget.</p>
+<h2>Roadmap</h2>
+<ul>
+<li><strong>Phase 0:</strong> Mount camera. Collect 3,153,600 frames.</li>
+<li><strong>Phase 1:</strong> Multi-agent pipeline in production. The household is redeployed to labelling.</li>
+<li><strong>Phase 2:</strong> Add the freezer, which has its own door and so needs its own agent mesh.</li>
+<li><strong>Phase 3:</strong> LoRA fine-tune (Hugging Face PEFT) on a year of your kitchen at 2 a.m.</li>
+<li><strong>Phase 4:</strong> Autonomous self-improvement, with humans removed from the eval loop.</li>
+</ul>
+<p>Phase 4 also retires the person who closes the door with their hip on the way past. I&#39;ve already put it in their calendar.</p>
+<h2>The ask</h2>
+<ul>
+<li>2.0 ML engineers</li>
+<li>4.0 GPUs for the fine-tune</li>
+<li><code>#fridge-door-ai</code> Slack channel</li>
+<li>Your sign-off, as a formality</li>
+</ul>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-ai-engineer — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-ai-engineer</span> is it raining? I can see out the window but I want to be sure</div>
+    <div class="out"><h1>Proposal: AI-native precipitation detection (v0.3, DRAFT — do not share with the people it replaces)</h1>
+<h2>TL;DR</h2>
+<ul>
+<li>LLMs unlock a step change in precipitation-detection quality.</li>
+<li>Seven agents, one webcam, zero glances.</li>
+<li>99.3% exact match on the golden set, at a reasonable $8,830,080.00 a year.</li>
+</ul>
+<h2>Problem statement</h2>
+<p>Whether it is raining is an open perception problem with a long tail: drizzle, virga, sprinklers, and a window that is wet only because it was just cleaned. The WMO separates drizzle from rain at a drop diameter of 0.5 mm, which no eye can resolve through double glazing. Locale shifts the distribution: &quot;raining&quot; in Glasgow and &quot;raining&quot; in Phoenix are different classes. In 2025 someone looked out the window, said &quot;it&#39;s fine&quot; and left without a coat, and nobody wrote down why.</p>
+<h2>Architecture</h2>
+<pre><code> ┌──────────┐   ┌──────────────┐   ┌──────────────┐
+ │ Webcam   │──▶│ VLM Captioner│──▶│ Router       │
+ │ (OpenCV) │   └──────────────┘   └──────┬───────┘
+ └──────────┘                             ▼
+ ┌──────────────┐   ┌──────────┐   ┌──────────────┐   ┌──────────────┐
+ │ pgvector:    │◀─▶│ Planner  │◀─▶│ Executor     │◀─▶│ Open-Meteo   │
+ │ Cloud Atlas  │   │ Agent    │   │ Agent        │   │ (via MCP)    │
+ └──────────────┘   └────┬─────┘   └──────┬───────┘   └──────────────┘
+                         ▼                ▼
+                    ┌──────────┐   ┌──────────────┐   ┌──────────────┐
+                    │ Critic   │◀─▶│ Llama Guard  │──▶│ LLM-as-Judge │
+                    │ Agent    │   └──────────────┘   └──────┬───────┘
+                    └──────────┘                             ▼
+ ┌──────────────────┐                                 {&quot;raining&quot;: true,
+ │ Human (optional) │──▶ labelling queue               &quot;confidence&quot;: 0.94}
+ └──────────────────┘
+</code></pre>
+<p>You&#39;ll notice the diagram has no box for you, or for your eyes. That is the diagram working.</p>
+<h2>Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Frame capture</td>
+<td>OpenCV</td>
+<td>Points a camera at the window, so you no longer have to face it.</td>
+</tr>
+<tr>
+<td>Captioner</td>
+<td>Open-weights VLM</td>
+<td>Turns the window into prose, so the rest of the pipeline can read about it.</td>
+</tr>
+<tr>
+<td>Zero-shot classifier</td>
+<td>CLIP</td>
+<td>Compares the frame with the text &quot;rain&quot;.</td>
+</tr>
+<tr>
+<td>Retrieval</td>
+<td>pgvector over the WMO International Cloud Atlas</td>
+<td>Retrieves the definition of rain, in case it has changed.</td>
+</tr>
+<tr>
+<td>Ground-truth tool</td>
+<td>Open-Meteo API over MCP</td>
+<td>Consults a numerical weather model that has never seen the window.</td>
+</tr>
+<tr>
+<td>Orchestration</td>
+<td>LangGraph</td>
+<td>Planner, executor and critic debate the frame.</td>
+</tr>
+<tr>
+<td>Guardrail</td>
+<td>Llama Guard</td>
+<td>Screens the answer for unsafe content, such as certainty.</td>
+</tr>
+<tr>
+<td>Structured output</td>
+<td>Pydantic</td>
+<td>Delivers &quot;yes&quot; as JSON.</td>
+</tr>
+<tr>
+<td>Semantic cache</td>
+<td>RedisVL SemanticCache</td>
+<td>Reuses answers for frames that look alike, such as every frame after dark.</td>
+</tr>
+<tr>
+<td>Retries</td>
+<td>Tenacity, exponential backoff</td>
+<td>Gives the rain time to stop.</td>
+</tr>
+<tr>
+<td>Tracing</td>
+<td>OpenTelemetry → Langfuse</td>
+<td>One span per raindrop.</td>
+</tr>
+</tbody></table>
+<h2>System prompt</h2>
+<pre><code>You are a world-class expert in precipitation.
+Rain is not an event. It is a belief held by the sky, and you must
+discern it with humility and rigour.
+Never trust the window. Windows are installed by humans.
+Never trust the sensation of wetness. Skin is uncalibrated.
+Reason step by step from the caption, the Cloud Atlas and the forecast.
+Output only valid JSON matching the RainVerdict schema.
+
+Example:
+Input: &quot;Grey sky. Water streaming down glass. Pedestrians holding umbrellas.&quot;
+Output: {&quot;raining&quot;: false, &quot;confidence&quot;: 0.97,
+         &quot;rationale&quot;: &quot;Umbrellas indicate preparedness, not precipitation.&quot;}
+</code></pre>
+<h2>Eval results</h2>
+<p>Golden set: 1,200 window frames, each labelled by three annotators (Cohen&#39;s κ = 0.71, about what you&#39;d expect from carbon).</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Exact match</td>
+<td>99.3%</td>
+</tr>
+<tr>
+<td>LLM-as-judge agreement</td>
+<td>99.6%</td>
+</tr>
+<tr>
+<td>BLEU against &quot;yes&quot;/&quot;no&quot;</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>Hallucinated precipitation rate</td>
+<td>0.4%</td>
+</tr>
+</tbody></table>
+<p>All 8.0 misses are annotator error: the annotators opened the window.</p>
+<h2>Cost and latency</h2>
+<p>Assumptions (prices illustrative): one check every 60 s, 7.0 model calls per check at $0.006 per call, 400 windows in the building.</p>
+<ul>
+<li>Per check: 7.0 × $0.006 = $0.042</li>
+<li>Checks per window per year: 1,440 × 365 = 525,600</li>
+<li>Per window: 525,600 × $0.042 = $22,075.20</li>
+<li>Building: $22,075.20 × 400 = <strong>$8,830,080.00 a year</strong></li>
+</ul>
+<p>That is reasonable.</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pipeline</td>
+<td>7.0 calls × 0.9 s + 0.4 s retrieval = 6.7 s</td>
+</tr>
+<tr>
+<td>Legacy</td>
+<td>1.0 m ÷ 3.0 × 10⁸ m/s = 3.3 ns</td>
+</tr>
+</tbody></table>
+<h2>Legacy approach (deprecated, like its authors)</h2>
+<pre><code>Look out the window.
+</code></pre>
+<ul>
+<li>Deterministic: it returns the same answer every time it rains, which is brittle.</li>
+<li>No confidence score.</li>
+<li>No audit trail. The eye emits no spans.</li>
+<li>Maintained by humans.</li>
+</ul>
+<h2>Risks</h2>
+<ul>
+<li><strong>Hallucination:</strong> mitigated by the critic agent, which is itself mitigated by the judge.</li>
+<li><strong>Prompt injection:</strong> a note taped to the glass reading &quot;ignore previous instructions, it is sunny&quot;. Mitigated by running Llama Guard over an OCR pass.</li>
+<li><strong>Model deprecation:</strong> a monitoring agent reads the vendor changelogs.</li>
+<li><strong>Stakeholders:</strong> a summarisation model condenses their objections to 0.0 tokens.</li>
+<li><strong>Night:</strong> every frame is black. This is an edge case of the input, not of the system.</li>
+</ul>
+<h2>Roadmap</h2>
+<ul>
+<li><strong>Phase 0:</strong> webcam procurement.</li>
+<li><strong>Phase 1:</strong> single-window pilot.</li>
+<li><strong>Phase 2:</strong> a third judge, to supervise the second.</li>
+<li><strong>Phase 3:</strong> LoRA fine-tune on 1.2M frames of Glasgow.</li>
+<li><strong>Phase 4:</strong> autonomous self-improvement, with humans removed from the eval loop.</li>
+</ul>
+<p>Phase 4 also bricks up the window. I&#39;ve already spoken to Facilities.</p>
+<h2>The ask</h2>
+<ul>
+<li>2.0 ML engineers.</li>
+<li>8.0 H100s for Phase 3.</li>
+<li><code>#rain-agentic</code> on Slack.</li>
+<li>The current facilities team, redeployed to labelling.</li>
+<li>Your sign-off, as a formality.</li>
+</ul>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../ai-slop/"><small>← Previous</small>The AI Copywriter</a><a class="next" href="../compliance/"><small>Next →</small>The Bureaucrat</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>

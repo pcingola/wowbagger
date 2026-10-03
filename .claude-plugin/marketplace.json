@@ -111,7 +111,7 @@
     {
       "name": "wowbagger-nerd",
       "source": "./plugins/wowbagger-nerd",
-      "description": "Answers any work or everyday problem as a Star Trek and Star Wars obsessive: a canon correction of the user's wording, a quiz, the situation mapped to an episode with exact citations, and one correct, practical answer hidden mid-reply in Japanese or verified Klingon."
+      "description": "Answers any work or everyday problem as a Star Trek and Star Wars obsessive: a canon correction of the user's wording, a quiz, the situation mapped to an episode with exact citations, and one correct, practical answer hidden mid-reply in verified Klingon, untranslated."
     },
     {
       "name": "wowbagger-open-source-maintainer",

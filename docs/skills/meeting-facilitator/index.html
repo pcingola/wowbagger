@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Meeting Facilitator · Wowbagger</title>
+<meta name="description" content="Has run 4,000 meetings without a single decision. Considers this the safest record in the building. Your decision is in the parking lot.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/meeting-facilitator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The Meeting Facilitator">
+<meta property="og:description" content="Has run 4,000 meetings without a single decision. Considers this the safest record in the building. Your decision is in the parking lot.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/meeting-facilitator/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-meeting-facilitator.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A serenely smiling facilitator points at a whiteboard agenda reading Align, Discuss, Revisit, Sync, Next steps, beside a sticky note that says Do we need a meeting?, while a dozen attendees slump, sleep and cry">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/meeting-facilitator.webp" alt="A serenely smiling facilitator points at a whiteboard agenda reading Align, Discuss, Revisit, Sync, Next steps, beside a sticky note that says Do we need a meeting?, while a dozen attendees slump, sleep and cry" width="800" height="597">
+    <div>
+      <div class="cat">Work</div>
+      <h1>The Meeting Facilitator</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-meeting-facilitator/skills/wowbagger-meeting-facilitator/SKILL.md">wowbagger-meeting-facilitator</a>
+      <p class="lede">Has run 4,000 meetings without a single decision. Considers this the safest record in the building. Your decision is in the parking lot.</p>
+      <div class="tags"><span>meetings</span><span>productivity</span><span>meta</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-meeting-facilitator@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-meeting-facilitator@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-meeting-facilitator</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-meeting-facilitator — example 1 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-meeting-facilitator</span> the coffee machine is broken, should we call someone to fix it?</div>
+    <div class="out"><p><strong>Beverage Infrastructure Alignment (1 of 4)</strong><br>Tuesday 6 October 2026, 10:00–11:00 · Room 4B + Teams · Recurs weekly, no end date</p>
+<p><strong>Attendees</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Required</td>
+<td>Head of Workplace Experience (owns the vision of coffee, not the machine)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Facilities Liaison (covering for Facilities, who is on leave until the machine is fixed)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Procurement Category Manager, Hot Beverages</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Finance Business Partner (to establish whether a repair is OpEx or a feeling)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Sustainability Lead (re: pod recyclability, re: everything)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Health &amp; Safety Officer (the steam wand made a noise in 2024)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Team Lead whose desk is nearest the machine (impacted stakeholder, visibly shaking)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>IT Service Desk (it has a screen, so it is IT)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Employee Experience Champion (tea drinker, attending as neutral observer)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Legal (TBC)</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Office Manager, who has the technician&#39;s number on a Post-it and could call in four minutes. <strong>Declined.</strong></td>
+</tr>
+<tr>
+<td>FYI</td>
+<td>Internal Comms</td>
+</tr>
+<tr>
+<td>FYI</td>
+<td>The café across the road (no reply)</td>
+</tr>
+<tr>
+<td>FYI</td>
+<td>All-Staff distribution list</td>
+</tr>
+</tbody></table>
+<p><strong>Purpose:</strong> To create shared understanding of our relationship with hot beverages.</p>
+<p><strong>Pre-read</strong></p>
+<ol>
+<li><em>Coffee Machine Current-State Assessment v3 (FINAL)(2).docx</em></li>
+<li><em>Caffeine Dependency Heatmap, by Floor</em></li>
+<li>Recording of <em>Kitchen Etiquette Sync (August)</em>, 1 h 52 min, to be watched at 1.0×</li>
+</ol>
+<p><strong>Pre-sync:</strong> Monday 5 October, 25 minutes, to align on the agenda. Pre-read: <em>Agenda Options Paper</em>.</p>
+<p><strong>Agenda</strong></p>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Item</th>
+<th>Box</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10:00</td>
+<td>Ice-breaker: &quot;If you were a hot drink, which one and why? ☕&quot;</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>10:08</td>
+<td>Check-in: one word for how you&#39;re feeling (not &quot;tired&quot;)</td>
+<td>7 min</td>
+</tr>
+<tr>
+<td>10:15</td>
+<td>Working agreements</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>10:20</td>
+<td>Recap: the 2024 Descaling Incident, lessons learned</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>10:30</td>
+<td>Stakeholder mapping: who is impacted by the absence of coffee</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>10:38</td>
+<td>Dot voting</td>
+<td>12 min</td>
+</tr>
+<tr>
+<td>10:50</td>
+<td>Parking-lot review</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>10:58</td>
+<td>Should we call someone?</td>
+<td>2 min</td>
+</tr>
+</tbody></table>
+<p>Total: 60 minutes. Forecast overrun: 17 minutes. I&#39;ll be calling that energy.</p>
+<p><strong>Working agreements:</strong> Phones down, unless you&#39;re about to phone a technician, in which case especially down. Cameras on. Assume positive intent. It&#39;s OK to disagree, in the parking lot.</p>
+<p><strong>Technique: dot voting.</strong> Each of 12 voters gets 3 dots, 36 in total, and may put them on any options, more than one dot on the same option included. The question we&#39;re voting on is <em>&quot;What does coffee mean to us as a team?&quot;</em> Result: &quot;Fuel&quot; 15, &quot;Connection&quot; 15, &quot;Honestly just fuel&quot; 6. A clean tie. The facilitator abstains to protect the integrity of the dots.</p>
+<p>We believe in empowering people. We have seen what they do with a phone number.</p>
+<p><strong>Parking lot</strong></p>
+<ul>
+<li>Should we call someone to fix it?</li>
+<li>Who has the number?</li>
+<li>Is the machine broken, or is it telling us something?</li>
+</ul>
+<p><strong>Outcomes:</strong> Alignment on next steps.</p>
+<p><strong>Action items</strong></p>
+<table>
+<thead>
+<tr>
+<th>Owner</th>
+<th>Action</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Facilitator</td>
+<td>Schedule follow-up</td>
+<td>6 Oct</td>
+</tr>
+<tr>
+<td>Employee Experience Champion</td>
+<td>Send pulse survey on meeting effectiveness</td>
+<td>9 Oct</td>
+</tr>
+<tr>
+<td>Procurement Category Manager</td>
+<td>Socialise a draft RACI for the coffee machine (four Accountables, nobody Responsible)</td>
+<td>12 Oct</td>
+</tr>
+<tr>
+<td>Facilities Liaison</td>
+<td>Take the Post-it offline</td>
+<td>When Facilities returns</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Retro on this meeting</td>
+<td>13 Oct</td>
+</tr>
+</tbody></table>
+<p>Every species gets the tools it deserves. Ours invented the espresso machine and the repair technician in the same century and has never introduced them.</p>
+<p><strong>Follow-up:</strong> <em>Coffee Machine Decision Meeting (prep)</em>, Monday 19 October, 07:30, the only slot that works across time zones. The free call-out window on the service contract closes on 16 October.</p>
+<p>The tea drinkers have never looked so well.</p>
+<p>Thanks all, great energy! Let&#39;s keep the momentum going 🙌</p>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-meeting-facilitator — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-meeting-facilitator</span> pineapple on the team pizza tonight, yes or no?</div>
+    <div class="out"><p><strong>Topping Alignment Working Session (1 of 4)</strong><br>Today, 17:30–18:30, Room 4B + Teams. Recurs weekly, no end date.</p>
+<p><strong>Attendees</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Required</td>
+<td>Head of Team Morale (owns the pizza budget, not the pizza)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Fruit Policy Lead (interim)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Two Engineers Who Hold Opinions About Hawaii</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Dietary Requirements Steward (spreadsheet last updated 2024)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Facilities, re: oven-adjacent risk</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Italian Heritage Stakeholder (self-nominated)</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Finance Business Partner (pineapple is a line item)</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Legal (TBC)</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Canadian Representative (pineapple pizza was invented in Ontario; disclosure pending)</td>
+</tr>
+<tr>
+<td>FYI</td>
+<td>The Pizzeria</td>
+</tr>
+<tr>
+<td>FYI</td>
+<td>Office Dog Liaison</td>
+</tr>
+<tr>
+<td>Optional, <strong>declined</strong></td>
+<td>Person Placing the Order (&quot;I&#39;ll just get half and half&quot;)</td>
+</tr>
+</tbody></table>
+<p><strong>Purpose:</strong> Begin the conversation about how we have conversations about toppings.</p>
+<p><strong>Pre-read</strong></p>
+<ol>
+<li><em>Sweet and Savoury: A Stakeholder Map</em> (31 slides)</li>
+<li><em>Topping Incidents FY23–FY26</em> (redacted)</li>
+<li>Recording of last month&#39;s <em>Anchovy Retrospective</em>, watched at 1.0×</li>
+</ol>
+<p><strong>Pre-sync:</strong> 16:55–17:20, 25 minutes, to align on the agenda. It has a pre-read: this agenda.</p>
+<p><strong>Agenda</strong></p>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Item</th>
+<th>Box</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>17:30</td>
+<td>Ice-breaker: &quot;If you were a topping, which would you exclude, and why? 🍕&quot;</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>17:38</td>
+<td>Check-in: rate your hunger as a weather system</td>
+<td>6 min</td>
+</tr>
+<tr>
+<td>17:44</td>
+<td>Working agreements</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>17:49</td>
+<td>Recap of the pre-sync</td>
+<td>7 min</td>
+</tr>
+<tr>
+<td>17:56</td>
+<td>Pre-read walkthrough, slides 1–4 of 31</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>18:06</td>
+<td>Dot voting (see below)</td>
+<td>14 min</td>
+</tr>
+<tr>
+<td>18:20</td>
+<td>Round-robin: what does &quot;yes&quot; mean to you?</td>
+<td>8 min</td>
+</tr>
+<tr>
+<td>18:28</td>
+<td>Pineapple: yes or no</td>
+<td>2 min</td>
+</tr>
+</tbody></table>
+<p>Forecast overrun: 25 minutes, finishing at 18:55. That&#39;s energy.</p>
+<p><strong>Working agreements:</strong> Phones down. Cameras on. Assume positive intent, including from the pineapple. It&#39;s OK to disagree, in the parking lot.</p>
+<p><strong>Technique: dot voting.</strong> Each of the six Required voters gets 2 dots and places them on any option, stacking allowed. That makes 12 dots in total. The options are names for the working group: <em>Tropical Futures Forum</em> and <em>Crust Governance Council</em>. Result: 6–6. The facilitator abstains. Every palate is valid, and that is how the species got to pineapple in the first place.</p>
+<p><strong>Parking lot</strong></p>
+<ul>
+<li>Pineapple: yes or no</li>
+<li>Is ham load-bearing?</li>
+<li>Does the Fruit Policy Lead role need a RACI?</li>
+<li>Should the parking lot have its own sync? (Booked.)</li>
+</ul>
+<p><strong>Outcomes:</strong> Alignment on next steps. Shared vocabulary for &quot;sweet&quot;. A renewed respect for the oven.</p>
+<p><strong>Action items</strong></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Owner</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Schedule follow-up</td>
+<td>Head of Team Morale</td>
+<td>Today, 18:56</td>
+</tr>
+<tr>
+<td>Send pulse survey on meeting effectiveness</td>
+<td>Facilitator</td>
+<td>Tomorrow</td>
+</tr>
+<tr>
+<td>Socialise the 6–6 result with the Pizzeria</td>
+<td>FYI list</td>
+<td>Tonight, if they&#39;re still open</td>
+</tr>
+<tr>
+<td>Retro on this session</td>
+<td>All</td>
+<td>Next cycle</td>
+</tr>
+</tbody></table>
+<p><strong>Follow-up:</strong> <em>Pineapple Decision Meeting (prep)</em>, Monday 07:30, the only slot that works across time zones. The pizza arrives tonight at 19:00. There are no wrong answers. Humanity has been checking for 300,000 years and the evidence says otherwise.</p>
+<p>Cold leftovers are a growth area.</p>
+<p>Thanks all, great energy! Let&#39;s keep the momentum going 🙌</p>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../mathematician/"><small>← Previous</small>The Mathematician</a><a class="next" href="../nerd/"><small>Next →</small>The Nerd</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>

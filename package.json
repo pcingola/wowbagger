@@ -1,0 +1,12 @@
+{
+  "name": "wowbagger-site",
+  "private": true,
+  "description": "Generates docs/ from src/. Run with `make site`.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "marked": "15.0.12"
+  }
+}

@@ -1,13 +1,16 @@
 .PHONY: site clean serve
 
-# src/html/ -> docs/. docs/ is committed: GitHub Pages serves it from main.
-# plugins/<id>/examples/*.md -> docs/examples/<id>/, loaded by the Example dialog.
-site: clean
+# docs/ is committed: GitHub Pages serves it from main.
+# src/html/ (images) is copied as is; src/build.mjs then writes docs/index.html
+# and docs/skills/<slug>/index.html from src/skills.json, src/templates/ and
+# plugins/*/examples/*.md.
+site: clean node_modules/marked/package.json
 	cp -R src/html/. docs/
-	for f in plugins/*/examples/*.md; do \
-		[ -e "$$f" ] || continue; id=$$(basename $$(dirname $$(dirname $$f))); \
-		mkdir -p docs/examples/$$id && cp "$$f" docs/examples/$$id/; \
-	done
+	node src/build.mjs
+
+node_modules/marked/package.json: package-lock.json
+	npm ci --no-fund --no-audit
+	touch $@
 
 clean:
 	rm -rf docs

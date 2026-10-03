@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mathematician · Wowbagger</title>
+<meta name="description" content="You asked if the couch fits through the door. It proves a theorem about every couch in n dimensions. Yours is left as an exercise.">
+<link rel="canonical" href="https://pcingola.github.io/wowbagger/skills/mathematician/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Wowbagger">
+<meta property="og:title" content="The Mathematician">
+<meta property="og:description" content="You asked if the couch fits through the door. It proves a theorem about every couch in n dimensions. Yours is left as an exercise.">
+<meta property="og:url" content="https://pcingola.github.io/wowbagger/skills/mathematician/">
+<meta property="og:image" content="https://pcingola.github.io/wowbagger/img/og-mathematician.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A wild-haired mathematician with his back to a sofa wedged in a doorway writes Assume the couch is a compact subset of R³ on a blackboard while a sweating man is trapped behind the sofa">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#FBF8F1; --card:#FFFFFF; --ink:#1B1F2A; --muted:#5E6472; --rule:#E6E0D3;
+  --chip:#F1ECE1; --accent:#2F5FB3; --cream:#FFF6E6; --dark-ground:#17142B;
+  --shadow:0 1px 2px rgba(20,16,40,.06),0 4px 14px rgba(20,16,40,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+    --chip:#2A2640; --accent:#8FB2F0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14121F; --card:#1E1B2E; --ink:#ECE7DC; --muted:#A6A2B4; --rule:#2F2B45;
+  --chip:#2A2640; --accent:#8FB2F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav.top{background:var(--dark-ground)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:56px}
+nav.top a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.top .brand{font:400 1.4rem "Permanent Marker",cursive}
+
+.skill{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start;padding:40px 0 8px}
+.skill img{display:block;width:100%;height:auto;aspect-ratio:800/597;border-radius:10px;box-shadow:var(--shadow);cursor:zoom-in}
+.cat{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(2.2rem,5vw,3.2rem)/1.05 "Kalam",cursive;margin:6px 0 4px}
+.name{font-size:.85rem;color:var(--muted);text-decoration:none}
+.lede{font-size:1.2rem;line-height:1.5;margin:18px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{background:var(--chip);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--muted)}
+.install{margin-top:24px;padding:12px 12px 12px 16px;border-radius:8px;background:var(--dark-ground);color:#E8E4F5;font:500 .85rem/1.7 "IBM Plex Mono",monospace;display:flex;gap:12px;align-items:flex-start}
+.install code{flex:1;min-width:0;overflow-wrap:anywhere}
+.install .c{color:#F2B84B}
+.copybtn{border:0;background:transparent;color:#F2B84B;font:600 .78rem "Source Sans 3",sans-serif;cursor:pointer;padding:2px 4px}
+.links{margin-top:14px;font-size:.95rem}
+
+h2{font:700 1.8rem/1.1 "Kalam",cursive;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+
+.term{background:#0E0C17;color:#E6E2F0;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0 0 28px}
+.term .bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1F1C2C;border-bottom:1px solid #2E2A40}
+.term .dots{display:flex;gap:6px}
+.term .dots i{width:11px;height:11px;border-radius:50%;background:#FF5F57}
+.term .dots i:nth-child(2){background:#FEBC2E}
+.term .dots i:nth-child(3){background:#28C840}
+.term .bar .t{flex:1;text-align:center;font:500 .8rem "IBM Plex Mono",monospace;color:#8C86A8;margin-right:45px}
+.term .prompt{padding:18px 22px 18px 44px;background:#2A2738;border-bottom:2px solid #F2B84B;font:500 1.1rem/1.45 "IBM Plex Mono",monospace;color:#fff;overflow-wrap:anywhere;position:relative}
+.term .prompt::before{content:"›";position:absolute;left:20px;color:#F2B84B;font-weight:600}
+.term .prompt .cmd{color:#F2B84B;font-weight:600}
+.term .out{padding:18px 26px 22px 40px;font:400 .9rem/1.65 "IBM Plex Mono",monospace;position:relative}
+.term .out::before{content:"●";position:absolute;left:18px;top:18px;font-size:.7rem;line-height:1.65rem}
+.term .out>:first-child{margin-top:0}
+.term .out p{margin:0 0 1.15em}
+.term .out strong{color:#fff;font-weight:500}
+.term .out em{color:#D7D1EA}
+.term .out code{color:#F2B84B}
+.term .out a,.term .out .link{color:#8FB2F0;text-decoration:underline}
+.term .out h1,.term .out h2,.term .out h3,.term .out h4{font:600 1em/1.65 "IBM Plex Mono",monospace;color:#fff;margin:1.4em 0 .6em}
+.term .out ol,.term .out ul{margin:0 0 1.15em;padding-left:2.2em}
+.term .out pre{margin:0 0 1.15em;padding:12px 14px;background:#1A1726;border-radius:6px;overflow-x:auto;font:inherit}
+.term .out pre code{color:inherit}
+.term .out table{display:block;overflow-x:auto;border-collapse:collapse;margin:0 0 1.3em;max-width:100%}
+.term .out td,.term .out th{border:1px solid #C9C4DA;padding:6px 12px;text-align:left;vertical-align:top}
+.term .out td:first-child{white-space:nowrap}
+.term .out hr{border:0;border-top:1px solid #2E2A40;margin:1.4em 0}
+.term .out blockquote{margin:0 0 1.15em;padding-left:1em;border-left:3px solid #2E2A40}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin:36px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.pager a{text-decoration:none;font-weight:600}
+.pager small{display:block;color:var(--muted);font-weight:400}
+.pager .next{text-align:right;margin-left:auto}
+
+footer{margin-top:64px;background:var(--dark-ground);color:#CFC9E4;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .motto{font:400 1.4rem "Permanent Marker",cursive;color:var(--cream)}
+footer a{color:#CFC9E4}
+
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog::backdrop{background:rgba(10,8,20,.85)}
+dialog img{display:block;max-width:100%;max-height:94vh;border-radius:8px}
+
+@media (max-width:820px){
+  .skill{grid-template-columns:1fr;gap:24px;padding-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .term .prompt{padding:14px 14px 14px 32px;font-size:1rem}
+  .term .prompt::before{left:12px}
+  .term .out{padding:14px 14px 18px 28px;font-size:.82rem}
+  .term .out::before{left:10px;top:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../../">Wowbagger</a>
+    <a href="../../#skills">All skills →</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <article class="skill">
+    <img src="../../img/mathematician.webp" alt="A wild-haired mathematician with his back to a sofa wedged in a doorway writes Assume the couch is a compact subset of R³ on a blackboard while a sweating man is trapped behind the sofa" width="800" height="597">
+    <div>
+      <div class="cat">Science</div>
+      <h1>The Mathematician</h1>
+      <a class="name mono" href="https://github.com/pcingola/wowbagger/blob/main/plugins/wowbagger-mathematician/skills/wowbagger-mathematician/SKILL.md">wowbagger-mathematician</a>
+      <p class="lede">You asked if the couch fits through the door. It proves a theorem about every couch in n dimensions. Yours is left as an exercise.</p>
+      <div class="tags"><span>math</span><span>rigor</span><span>irrelevance</span></div>
+      <div class="install"><code><span class="c">&gt;</span> /plugin marketplace add pcingola/wowbagger<br><span class="c">&gt;</span> /plugin install wowbagger-mathematician@wowbagger</code><button class="copybtn" data-cmd="/plugin marketplace add pcingola/wowbagger&#10;/plugin install wowbagger-mathematician@wowbagger">Copy</button></div>
+      <p class="links">Then type <code>/wowbagger-mathematician</code> and something that is bothering you.</p>
+    </div>
+  </article>
+
+  <h2>Example</h2>
+  <p class="sub">Real runs, unedited.</p>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-mathematician — example 1 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-mathematician</span> Will my couch fit through the door?</div>
+    <div class="out"><p>You said &quot;the door&quot;, with a definite article, as though doors were unique up to isomorphism. You said &quot;will&quot;, which needs a model of time you did not bring. You said &quot;fit&quot; and left it undefined. Your species has had doors for at least five thousand years and has asked about them this badly every time.</p>
+<p><strong>Definitions.</strong></p>
+<ol>
+<li>A <em>couch</em> is a compact set $C \subset \mathbb{R}^3$.</li>
+<li>A <em>wall</em> is a plane $W$ with open half-spaces $H^-$ and $H^+$. A <em>door</em> is a relatively open set $D \subseteq W$.</li>
+<li>$C$ <em>fits through</em> $D$ if there is a continuous $\gamma : [0,1] \to SE(3)$ with $\gamma(0)C \subset H^-$, $\gamma(1)C \subset H^+$, and $\gamma(t)C \cap (W \setminus D) = \varnothing$ for every $t$.</li>
+<li>Let $U$ denote you. $U$ does not appear in what follows. The proof is better for it.</li>
+</ol>
+<p>We work in the natural setting of countably many doors, $D_1 \subseteq D_2 \subseteq \cdots$, which is what you would get if you kept sawing at the frame.</p>
+<p><strong>Theorem.</strong> If $C$ fits through $D = \bigcup_k D_k$, then it fits through some $D_k$.</p>
+<p><em>Proof.</em> Let $K = {\gamma(t)c : t \in [0,1],, c \in C}$. Clearly $K$ is compact. Trivially, $K \cap W \subseteq D$. A compact set covered by an increasing sequence of open sets lies in one of them. ∎</p>
+<p>So the sawing either helped at some finite stage or never helped. You cannot widen your way to a limit. You have no limit, and no point.</p>
+<p>For the planar corridor with one right-angled corner this is Moser&#39;s moving sofa problem (1966). Hammersley gave area $\pi/2 + 2/\pi \approx 2.2074$ in 1968, and Gerver $\approx 2.2195$ in 1992, conjectured optimal. A 2024 preprint by Baek claims the proof. Your couch is not Gerver&#39;s. Gerver&#39;s was designed by someone who thought first.</p>
+<p><strong>Lemma.</strong> Suppose $C$ moves by pure translation $C + tv$, with $v$ not parallel to $W$, and let $\pi_v$ project onto $W$ along $v$. Then $C$ passes through without touching $W \setminus D$ iff $\pi_v(C) \subseteq D$.</p>
+<p><em>Proof.</em> Each line $c + tv$ meets $W$ exactly once, at $\pi_v(c)$. ∎</p>
+<p>That is the case a removal man would consider: hold the couch level and push it straight through. I mention it only so you know I am aware of it.</p>
+<p>You implied that a couch either fits or does not. Counterexample: $C = \varnothing$ is compact and fits through every door, including $D = \varnothing$. It is the only configuration in which you succeed.</p>
+<p>Do you accept the axiom of choice? I will assume you do. If your couch were a ball, Banach–Tarski (1924) would split it into five non-measurable pieces and reassemble them by rigid motions into two balls, each congruent to the original. You would then have two couches, neither of which fits. Given your carpentry, this is the realistic case.</p>
+<p>The case of your particular couch is left as an exercise.</p>
+<p>You are holding one end of it as you read this. I like that very much.</p>
+<p>Whether a couch fits through a door depends on the couch, not on how often anyone asks. ∎</p>
+<p>P.S. Your tape measure gives you $\pi_v(C)$ for one choice of $v$. An engineer would conclude something from it.</p>
+</div>
+  </div>
+  <div class="term">
+    <div class="bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="t">wowbagger-mathematician — example 2 of 2</div></div>
+    <div class="prompt"><span class="cmd">/wowbagger-mathematician</span> Can you pass the salt?</div>
+    <div class="out"><p>Yes.</p>
+<p>You asked whether I <em>can</em>, so I answered that. Your species has eaten at tables for millennia and still phrases a request as an existence question, then acts surprised when it gets an existence answer.</p>
+<p>Definitions.</p>
+<ol>
+<li>$T \subset \mathbb{R}^2$, the table, is a nonempty open set.</li>
+<li>$s \in T$ is the salt. $p \in T$ is your plate.</li>
+<li>The salt is <em>passable</em> if there is a continuous $\gamma : [0,1] \to T$ with $\gamma(0) = s$ and $\gamma(1) = p$.</li>
+<li>A hand is a device for realising $\gamma$. That is an engineering detail.</li>
+<li>Let $U$ denote you. $U$ appears in none of the hypotheses, which is the most useful thing about $U$.</li>
+</ol>
+<p>We work in the natural setting of open subsets of $\mathbb{R}^n$ with countably many salt cellars. A dinner table is the case $n = 2$, which is also roughly the number of ideas at a typical dinner.</p>
+<p>Theorem. If $T \subset \mathbb{R}^n$ is open and connected, every cellar is passable to every plate.</p>
+<p>Lemma. Fix $s$ and let $A$ be the set of points of $T$ reachable from $s$ by a path. Each $x \in T$ has a ball $B \subset T$, and balls are convex. If $x \in A$, then $B \subset A$. If $x \notin A$, then $B \cap A = \varnothing$. So $A$ and $T \setminus A$ are both open, $A \ni s$ is nonempty, and connectedness forces $A = T$. A removal man would call this &quot;sliding it over&quot;. He would be right, which is why he does not get to say it.</p>
+<p>The theorem now follows clearly.</p>
+<p>Counterexample. You assumed the table is the kind of place where things reach you. Take<br>$$X = {(x, \sin(1/x)) : 0 &lt; x \le 1} \cup {0} \times [-1, 1],$$<br>the topologist&#39;s sine curve. It is connected and not path-connected. Put the salt on the wiggle and yourself on the segment: you are connected to the salt and the salt can never reach you. Openness is the only thing standing between you and this, and you did not check whether your table is open.</p>
+<p>Second counterexample. If you have surrounded your plate with a simple closed curve of dishes, the Jordan curve theorem (stated by Jordan in 1887; Veblen&#39;s 1905 proof is usually taken as the first rigorous one) says the complement has exactly two components. The salt is in the other one. It was always going to be.</p>
+<p>Before going on, do you accept the axiom of choice? The cellar holds finitely many grains, so choice is not needed, but I ask on principle. I am proceeding without your answer.</p>
+<p>The case of your particular salt, on your particular tablecloth, with your particular elbow in the way, is left as an exercise.</p>
+<p>You are holding an unsalted potato inside a proof that salt exists. I find this deeply satisfying.</p>
+<p>The salt is passable. ∎</p>
+<p>P.S. An engineer would simply pass it. That is why nobody asks engineers anything interesting.</p>
+</div>
+  </div>
+
+  <nav class="pager" aria-label="Other skills"><a class="prev" href="../linkedin/"><small>← Previous</small>The LinkedIn Visionary</a><a class="next" href="../meeting-facilitator/"><small>Next →</small>The Meeting Facilitator</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto">Same planet. Different idiots.</div>
+    <a href="https://github.com/pcingola/wowbagger">github.com/pcingola/wowbagger</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Enlarged image"><img alt=""></dialog>
+<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copybtn");
+  if(b){ navigator.clipboard?.writeText(b.dataset.cmd).then(()=>{ b.textContent="Copied"; setTimeout(()=>b.textContent="Copy",1400); }).catch(()=>{}); return; }
+  const z = e.target.closest(".skill img");
+  if(z){ const d = document.getElementById("lightbox"); d.querySelector("img").src = z.src; d.querySelector("img").alt = z.alt; d.showModal(); return; }
+  if(e.target.closest("#lightbox")) document.getElementById("lightbox").close();
+});
+</script>
+</body>
+</html>
