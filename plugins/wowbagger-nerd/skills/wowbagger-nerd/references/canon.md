@@ -56,7 +56,7 @@ Conventions: Star Trek season and episode numbers are in broadcast order (TOS pr
 |---|---|---|
 | *Star Trek II: The Wrath of Khan* (1982) | The Kobayashi Maru, a no-win test. Kirk reprogrammed the simulation so the ship could be rescued. USS Reliant, NCC-1864. Khan quotes a Klingon proverb in dialogue (it is not an opening card; that card is from another film entirely). | "I don't believe in a no-win scenario." (Kirk); "...the needs of the many outweigh the needs of the few." (Spock); "Or the one." (Kirk) |
 | *Star Trek III: The Search for Spock* (1984) | Scotty disables the Excelsior by removing four parts from its transwarp drive. Scotty quotes eight weeks for a refit and does it in two; Kirk asks whether he always multiplies his repair estimates by a factor of four. | "The more they overthink the plumbing, the easier it is to stop up the drain!" (Scott); "How else can I keep my reputation as a miracle worker?" (Scott) |
-| *Star Trek IV: The Voyage Home* (1986) | Scotty tries to use a 1986 computer. | "Hello, computer." (Scott, into the mouse); "A keyboard. How quaint." (Scott) |
+| *Star Trek IV: The Voyage Home* (1986) | The crew travels from 2286 back to 1986. Scotty tries to use a 1986 computer. | "Hello, computer." (Scott, into the mouse); "A keyboard. How quaint." (Scott) |
 | *Star Trek V: The Final Frontier* (1989) | | "What does God need with a starship?" (Kirk) |
 | *Star Trek VI: The Undiscovered Country* (1991) | Chancellor Gorkon at dinner. "taH pagh taHbe'." | "You have not experienced Shakespeare until you have read him in the original Klingon." (Gorkon) |
 | *Star Trek* (2009) | Kirk passes the Kobayashi Maru on his third attempt after inserting a subroutine; Spock wrote the test and accuses him of cheating. | |
@@ -151,7 +151,7 @@ Episode I *The Phantom Menace* (1999); II *Attack of the Clones* (2002); III *Re
 | "I want proof, not leads!" | Ozzel, *The Empire Strikes Back* |
 | "I am not a committee!" | Leia, *The Empire Strikes Back* |
 | "I'm standing here in pieces, and you're having delusions of grandeur!" | C-3PO, *The Empire Strikes Back* |
-| "I love you." / "I know." | Leia / Han, *The Empire Strikes Back* |
+| "I love you." / "I know." | Leia / Han, *The Empire Strikes Back*; Han is then frozen in carbonite, and Leia frees him in *Return of the Jedi* |
 | "It's a trap!" | Ackbar, *Return of the Jedi* |
 | "You may dispense with the pleasantries, Commander." | Vader, *Return of the Jedi* |
 | "I'm here to put you back on schedule." | Vader, *Return of the Jedi* |

@@ -1,6 +1,6 @@
 # Klingon
 
-Every Klingon word and sentence she may use. **Use only what is on this page, spelt exactly as here.** Case and apostrophes are letters: `q` and `Q`, `H`, `D`, `S`, `I` and `'` are distinct. Never build a new sentence, never add an affix, never guess a word. If the Klingon for something is not here, she says it in Japanese.
+Every Klingon word and sentence she may use. **Use only what is on this page, spelt exactly as here.** Case and apostrophes are letters: `q` and `Q`, `H`, `D`, `S`, `I` and `'` are distinct. Never build a new sentence, never add an affix, never guess a word. If the Klingon for something is not here, she does not say it.
 
 Checked against the boQwI' canon database and Okrand's books. Sources: TKD = *The Klingon Dictionary* (1985; TKDA = 1992 addendum); TKW = *The Klingon Way*; KGT = *Klingon for the Galactic Traveler*; PK = *Power Klingon* (audio); qep'a' 21 = words Okrand released in 2014.
 
@@ -12,7 +12,7 @@ Checked against the boQwI' canon database and Okrand's books. Sources: TKD = *Th
 
 ## Hidden-answer sentences (the only Klingon allowed for the hidden answer)
 
-Use one only when it is exactly the right, complete advice for the user's problem. Otherwise the hidden answer is in Japanese.
+The hidden answer is always one of these, verbatim, never glossed. Pick the one that is the correct practical fix for the user's problem. Each sentence is built from canon words with canon grammar; the Check column gives the sources. `-moH` with a stative verb and `yI-` follows the canon imperative `yIngaQmoH!` ("Secure him!", ENT "Affliction").
 
 | Klingon | Literal | Use when | Check |
 |---|---|---|---|
@@ -28,6 +28,17 @@ Use one only when it is exactly the right, complete advice for the user's proble
 | yIwoD. | Throw it away. | Clutter, an obsolete document, a dead project, old files. | woD TKD |
 | yIleS. | Rest. | Burnout, a holiday not taken, a weekend worked. | leS TKD |
 | yIloS. | Wait. | A decision that does not need to be made today. | loS TKD |
+| qep yIngajmoH. | Make the meeting short. | A meeting or standup that overruns; time-box it. | qep "meeting" TKD; ngaj "be short (in duration)" KGT; -moH TKD 4.2.4 |
+| qep yImej. | Leave the meeting. | A meeting with no agenda or no role for the user; decline or walk out. | mej "leave, depart" (transitive) TKDA |
+| SoQ yIngajmoH. | Make the speech short. | A presentation, a talk, a pitch, a deck that is too long. | SoQ "speech, lecture, address" TKD; ngaj KGT; -moH TKD |
+| nav yIlel. | Take out the paper. | A paper jam. | nav "paper" TKD; lel "take out" TKD |
+| QIn yIngeHQo'. | Don't send the message. | An angry draft, a reply-all, a message written in temper. | QIn "message" KGT; ngeH "send" TKD; -Qo' TKD |
+| wa' Qu' yIwIv. | Choose one task. | Too many priorities, a boss who wants everything first, overwhelm. | wa' "one", Qu' "task", wIv "choose" TKD; number before noun |
+| Qu'mey tIwoD. | Throw away the tasks. | A budget or headcount cut: drop whole projects instead of thinning all of them. | Qu' + -mey plural, so tI-; woD TKD |
+| QaghlIj yIchID. | Admit your mistake. | The user made the mistake and is deciding whether to own it. | Qagh TKD; -lIj "your" TKD; chID "admit" TKD |
+| De' yIpol. | Keep the data. | Before a reinstall, a migration, a laptop swap: back it up. | De' TKD; pol "keep, save" TKD |
+| yIvumQo'. | Don't work. | Weekend email, a holiday, working while sick. | vum "work" TKD; -Qo' TKD |
+| yIlop. | Celebrate. | Should I celebrate, mark the launch, bring the cake. | lop "celebrate" TKD; "yIlop!" TKW p.153 |
 
 ## Phrases (decoration; may be glossed in English)
 
